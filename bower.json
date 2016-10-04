@@ -1,0 +1,22 @@
+{
+  "name": "rabbi-sacks",
+  "homepage": "http://hope.agency",
+  "authors": [
+    "Elvina Flower <elvina@hope.agency>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "uikit": "^2.25.0"
+  },
+  "overrides": {
+    "uikit": {
+      "main": [
+        "./js/uikit.js",
+        "./js/components/slideshow.js"
+      ]
+    }
+  }
+}
+
+

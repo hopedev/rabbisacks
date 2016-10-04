@@ -1,0 +1,61 @@
+body { margin: 0 1em; }
+
+.container {
+	 @extend .uk-container;
+	 @extend .uk-container-center; 
+	
+}
+
+// hide text for image replacement
+.hide-text {
+         text-indent: 100%;
+         white-space: nowrap;
+         overflow: hidden;
+}
+
+
+
+/* Keyframes: Slide
+ * Used by slideshow component
+ ========================================================================== */
+/*
+ * Left
+
+@-webkit-keyframes uk-slide-up {
+  0% {
+    -webkit-transform: translateY(-100%);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+  }
+}
+@keyframes uk-slide-up {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+ */
+
+/*
+ * Right
+
+@-webkit-keyframes uk-slide-down {
+  0% {
+    -webkit-transform: translateY(100%);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+  }
+}
+@keyframes uk-slide-down {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+ */
