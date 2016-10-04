@@ -3,7 +3,12 @@
 	@extend .uk-hidden-small;
 }
 
-#sidemenu .menu-main-navigation-container > .uk-nav{ // only main ul, not any submenu's
+.topbanner{
+	background-color: black;
+	color: white;
+}
+
+#sidemenu .uk-nav{ // only main ul, not any submenu's
 	padding-top: 4em;
 	padding-left: 2em;	
 }
