@@ -1,0 +1,40 @@
+adapter: sftp
+host: shell.gridhost.co.uk
+username: hopedeva
+password: sjw2fytdv9y8pxic
+path: //var/sites/h/hopedev.agency/subdomains/rs/wp-content/
+
+exclude:
+   - .gitignore    
+    - index.php
+    - dandelion.yml
+    - dir/
+    - themes/rabbisacks/.bowerrc
+    - themes/rabbisacks/.editorconfig
+    - themes/rabbisacks/.github/
+    - themes/rabbisacks/.gitignore
+    - themes/rabbisacks/.jscsrc
+    - themes/rabbisacks/.jshintrc
+    - themes/rabbisacks/.travis.yml
+    - themes/rabbisacks/.editorconfig
+    - themes/rabbisacks/.github/
+    - themes/rabbisacks/.gitignore
+    - themes/rabbisacks/.jscsrc
+    - themes/rabbisacks/.jshintrc
+    - themes/rabbisacks/.travis.yml
+    - themes/rabbisacks/bower_components
+    - themes/rabbisacks/node_modules
+    - themes/rabbisacks/npm-debug.log
+    - themes/rabbisacks/vendor
+    - themes/twentysixteen/*
+    - themes/index.php
+    - themes/composer.phar
+    - themes/npm-debug.log
+    - plugins/*
+    - languages/*
+    - upgrade/*
+    - uploads/*
+
+
+additional:
+    - themes/rabbisacks/dist/
