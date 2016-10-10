@@ -38,6 +38,13 @@ function setup() {
   // http://codex.wordpress.org/Function_Reference/add_image_size
   add_theme_support('post-thumbnails');
 
+//     add_image_size( 'home-banner-large', 1800, 460, true ); 
+//         add_image_size( 'home-hero', 800, 450, true ); 
+//   add_image_size( 'book-thumb', 100, 160, true ); 
+//     add_image_size( 'video-thumb', 200, 112, true ); 
+//     add_image_size( 'menu-thumb', 80, 80, true ); 
+// add_image_size( 'book-home', 200, 400 ); 
+
   // Enable post formats
   // http://codex.wordpress.org/Post_Formats
   //add_theme_support('post-formats', ['aside', 'gallery', 'link', 'image', 'quote', 'video', 'audio']);
