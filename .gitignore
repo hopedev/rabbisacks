@@ -1,9 +1,18 @@
 # Include your project-specific ignores in this file
 # Read about how to use .gitignore: https://help.github.com/articles/ignoring-files
-dist
-bower_components
-node_modules
-npm-debug.log
-vendor
+themes/rabbisacks/dist
+themes/rabbisacks/bower_components
+themes/rabbisacks/node_modules
+themes/rabbisacks/npm-debug.log
+themes/rabbisacks/vendor
+themes/twentysixteen/*
+themes/index.php
+themes/composer.phar
+themes/npm-debug.log
+plugins/*
+languages/*
+upgrade/*
+uploads/*
+index.php
 
 *.zip
