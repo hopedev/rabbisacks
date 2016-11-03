@@ -52,6 +52,7 @@ Class IWCbooks {
 
         register_post_type(self::$post_type, $args);
     } 
+    
 }
 
 IWCbooks::init();
