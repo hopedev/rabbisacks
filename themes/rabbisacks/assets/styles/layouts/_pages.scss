@@ -1,27 +1,18 @@
-.page-header{
-	padding: 3em 0;
-	.home &{
-	@extend  .screen-reader-text;		
-	}
+.home{
+    .page-header {
+        @extend .hide-text;
+    
+    }
+    .home-image{
+            background-image: url('../images/sacks-header.jpg');
+            min-height: 669px;
 
-}
-
-.film-button{
-    padding: 4em;
-    color: $brand-primary;
-    font-size: xx-large;
-    i { 
-    	padding-bottom:0.5em;
-    }	
-}
-
-
-
-// Project Archive
-
-
-article.iso-item {
-    width: 300px;
-    height: auto;
-   //  float: left;
+    }
+    .page-sector {
+        padding: 7em 0;
+        &.perspectives .uk-grid{
+            background-color: azure;
+            min-height:200px;
+        }
+    }
 }

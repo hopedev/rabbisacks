@@ -13,7 +13,8 @@
     "uikit": {
       "main": [
         "./js/uikit.js",
-        "./js/components/slideshow.js"
+        "./js/components/slideshow.js",
+        "./js/components/sticky.js"
       ]
     }
   }
