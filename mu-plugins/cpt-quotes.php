@@ -7,7 +7,7 @@
  */
 !defined('ABSPATH') and exit;
 
-Class IWCquotes {
+Class HPquotes {
 
     private static $post_type = "quote";
 
@@ -54,7 +54,7 @@ Class IWCquotes {
     } 
 }
 
-IWCquotes::init();
+HPquotes::init();
 
 
 
