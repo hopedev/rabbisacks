@@ -1,15 +1,13 @@
 <header class="banner">
-
+  <div class="container uk-container uk-container-center">
 
       <div class="topbanner uk-clearfix">
-       <div class="container uk-container uk-container-center">
           <div class="nav-primary uk-navbar-flip">
             <?php
             if (has_nav_menu('social_navigation')) :
               wp_nav_menu(['theme_location' => 'social_navigation', 'menu_class' => 'uk-navbar-nav nav', 'walker' => new Walker_UIKIT()]);
             endif;
             ?>
-        </div>
         </div>
 
       </div>
@@ -38,29 +36,28 @@
       
 
       <nav class="uk-navbar">
-         <div class="container uk-container uk-container-center">
-            <div class="uk-navbar-brand">
-                <a class="" href="<?= esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a>
-            </div>
-         
-              <div class="nav-primary">
-                  <?php
-                  if (has_nav_menu('primary_navigation')) :
-                    wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'uk-navbar-nav nav', 'walker' => new Walker_UIKIT()]);
-                  endif;
-                  ?>
-              </div>
 
-              <div class="uk-navbar-flip">
-                     <a href="#sidemenu"  class="uk-navbar-toggle" data-uk-offcanvas=""></a>  
-                <span>Search</span>
-        
+          <div class="uk-navbar-brand">
+              <a class="" href="<?= esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a>
           </div>
+       
+            <div class="nav-primary">
+                <?php
+                if (has_nav_menu('primary_navigation')) :
+                  wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'uk-navbar-nav nav', 'walker' => new Walker_UIKIT()]);
+                endif;
+                ?>
+            </div>
+
+            <div class="uk-navbar-flip">
+                   <a href="#sidemenu"  class="uk-navbar-toggle" data-uk-offcanvas=""></a>  
+              <span>Search</span>
+      
         </div>
       </nav>
 
  
   
 
-
+  </div>
 </header>

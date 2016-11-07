@@ -9,7 +9,7 @@
 
 Class IWCbooks {
 
-    private static $post_type = "books";
+    private static $post_type = "book";
 
     public static function init() {
         add_action("init", array(__CLASS__, "register_post_type"));
