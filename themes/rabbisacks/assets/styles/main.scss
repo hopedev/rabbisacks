@@ -10,9 +10,10 @@
 // endbower
 
 
-
+@import "../../bower_components/uikit/scss/components/dotnav.scss";
+@import "../../bower_components/uikit/scss/components/slidenav.scss";
 @import "../../bower_components/uikit/scss/components/slideshow.scss";
-//@import "../../bower_components/uikit/scss/components/sticky.scss";
+@import "../../bower_components/uikit/scss/components/sticky.scss";
 @import "common/global";
 @import "components/buttons";
 @import "components/comments";

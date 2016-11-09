@@ -1,0 +1,53 @@
+
+
+
+ // ==========  Mobile First Method  ==========
+ 
+	/* Custom, iPhone Retina */
+
+ 	@media only screen and (min-width : 320px){ 
+ 	
+ 	}
+ 
+	/*  Small Devices, Phones */
+	@media only screen and (min-width : 480px){ 
+	
+	}
+
+	/* medium Devices, Tablets */
+	@media only screen and (min-width : 768px){
+
+		.alignleft {
+		    float: left;
+		    //margin-right: ($line-height-computed / 2);
+		  }
+		  .alignright {
+		    float: right;
+		    //margin-left: ($line-height-computed / 2);
+		  }
+
+		  .feature-left{
+			     @extend %borders;
+			    border-right-width: $border-line-width;    
+			}
+			.home .home-image{
+            min-height: 669px;
+		    }
+
+	 }
+
+	
+ 	
+ 	
+	/* large Devices, Desktops */
+	@media only screen and (min-width : 992px){ 
+
+	}
+ 
+	/* XLarge Devices, Wide Screens */
+	// @media only screen and (min-width : 1200px){ 
+	
+
+	// }
+	
+	

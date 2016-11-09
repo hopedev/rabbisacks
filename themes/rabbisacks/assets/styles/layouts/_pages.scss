@@ -5,14 +5,30 @@
     }
     .home-image{
             background-image: url('../images/sacks-header.jpg');
-            min-height: 669px;
-
+            min-height: 200px;
     }
     .page-sector {
-        padding: 7em 0;
+        padding: 0;
         &.perspectives .uk-grid{
-            background-color: azure;
-            min-height:200px;
+
         }
     }
+}
+
+
+
+.page-sector-title{
+    display: table;
+    white-space: nowrap;
+       text-align: center;
+    text-transform: uppercase;
+    &:before, &:after {
+        //background:url(data:image/gif;base64,R0lGODdhAQABAIgAAEqMMQAAACwAAAAAAQABAAACAkQBADs=) repeat-x center;
+          background: linear-gradient(to bottom, $dark-grey, $dark-grey) no-repeat center / 90% 2px;
+          content: '';
+          display: table-cell;
+          width: 50%;
+    }
+    &:before {  }
+    &:after { }
 }
