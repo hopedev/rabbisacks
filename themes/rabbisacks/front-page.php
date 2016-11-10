@@ -121,16 +121,46 @@
 	 	</div>
 	</div> <!-- End Commentary -->
 
-	<div class="page-sector">
-		<div class="uk-panel uk-panel-box">
-			<h2>Why I am a Jew</h2>
+	<div class="page-sector feature fullwidth">
+	
+			<h4 class="page-sector-title">Why I am a Jew</h4>
+
+				<?php
+							$args = array( 'posts_per_page' => 1, 	
+											'tax_query' => array(
+													array(
+														'taxonomy' => 'media',
+														'field' => 'slug',
+														'terms' => 'feature'
+													)
+											)
+							);
+							$persposts = get_posts( $args );
+							 foreach ( $persposts as $post ) : setup_postdata( $post ); ?>	
+
+		<div class="" style="background:url(<?php the_post_thumbnail_url('large') ?>)  no-repeat center center fixed; background-size:cover" >
+		 	
+		 	
+				<div class="uk-panel uk-panel-box"> 
+
+
+
+				 	<div class=""><?php the_post_thumbnail('large'); ?></div>
+						<h4 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
+						
+
+				    <?php endforeach; ?>
+
+				</div>
+			
+
 		</div>
 	</div><!-- End I Am a Jew -->
 
 
 
 
-	<div class="page-sector">Books | Video fixed width 
+	<div class="page-sector"> 
 
 		<div class="uk-grid feature-double">
 		 	<div class="uk-width-medium-1-3"> 
