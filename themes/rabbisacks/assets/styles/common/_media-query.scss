@@ -32,10 +32,16 @@
 					border-color: $dark-grey;
 			    border-right-width: $border-line-width;    
 			}
-			.home .home-image{
-            min-height: 669px;
-		    }
-
+			.home {
+				.home-image{
+	            min-height: 669px;
+			    }
+			    .headertext{
+			        font-size: 5rem;
+			        padding-top: 4rem;
+			    }
+			}
+		
 	 }
 
 	

@@ -4,8 +4,16 @@
     
     }
     .home-image{
-            background-image: url('../images/sacks-header.jpg');
-            min-height: 200px;
+            background-image: url('../images/home-header.jpg');
+            min-height: 235px;
+                z-index: -50;
+    }
+    .headertext{
+        color: #fff;
+        font-size: 2rem;
+        line-height: 1.2;
+        padding-top: 2rem;
+        font-family: 'GFS Didot', serif;
     }
     .page-sector {
         padding: 0;
@@ -23,7 +31,6 @@
        text-align: center;
     text-transform: uppercase;
     &:before, &:after {
-        //background:url(data:image/gif;base64,R0lGODdhAQABAIgAAEqMMQAAACwAAAAAAQABAAACAkQBADs=) repeat-x center;
           background: linear-gradient(to bottom, $dark-grey, $dark-grey) no-repeat center / 90% 2px;
           content: '';
           display: table-cell;

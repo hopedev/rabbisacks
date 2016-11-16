@@ -1,8 +1,18 @@
+ <div class="home-image uk-cover-background " data-uk-sticky="{top:80}"> 
+
+
+	    <img class="uk-invisible" src="" width="" height="" alt="">
+	    <div class="uk-position-cover uk-flex uk-flex-center uk-flex-middle">
+		    <div class="headertext uk-container uk-container-center uk-text-center" >Morality is taught by being lived. It is learned by doing</div>
+
+	    </div>
+    </div>
+
   <?php while (have_posts()) : the_post(); ?>
 
-<div class="home-image uk-cover-background" > </div>
 
-	<div class=" uk-container uk-container-center uk-text-center">
+
+	<div class="container uk-container uk-container-center uk-text-center">
   
 	  <?php get_template_part('templates/page', 'header'); ?>
 
@@ -121,7 +131,7 @@
 	 	</div>
 	</div> <!-- End Commentary -->
 
-	<div class="page-sector feature fullwidth">
+	<div class="page-sector feature">
 	
 			<h4 class="page-sector-title">Why I am a Jew</h4>
 
