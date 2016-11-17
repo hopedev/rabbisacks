@@ -1,3 +1,4 @@
+ <?php /* Template Name: Home */ ?>
  <div class="home-image uk-cover-background " data-uk-sticky="{top:80}"> 
 
 
@@ -21,7 +22,7 @@
 
 	  <?php // Covenant & Conversation
 
-		$args = array( 'posts_per_page' => 3,  'category' => 5 );
+		$args = array( 'posts_per_page' => 3,  'category' => 852 ); // Covenant & Conversation cat id= 852
 
 		$persposts = get_posts( $args );
 		 // print_r($myposts[0]->ID);
@@ -132,40 +133,29 @@
 	</div> <!-- End Commentary -->
 
 	<div class="page-sector feature">
-	
-			<h4 class="page-sector-title">Why I am a Jew</h4>
+		<h4 class="page-sector-title">Why I am a Jew</h4>
+			<?php
+				$args = array( 'posts_per_page' => 1, 	
+								'tax_query' => array(
+										array(
+											'taxonomy' => 'media',
+											'field' => 'slug',
+											'terms' => 'feature'
+										)
+								)
+				);
+				$persposts = get_posts( $args );
+				foreach ( $persposts as $post ) : setup_postdata( $post ); ?>	
 
-				<?php
-							$args = array( 'posts_per_page' => 1, 	
-											'tax_query' => array(
-													array(
-														'taxonomy' => 'media',
-														'field' => 'slug',
-														'terms' => 'feature'
-													)
-											)
-							);
-							$persposts = get_posts( $args );
-							 foreach ( $persposts as $post ) : setup_postdata( $post ); ?>	
+					<div class="" style="background:url(<?php the_post_thumbnail_url('large') ?>)  no-repeat center center fixed; background-size:cover" >		 	
+						<div class="uk-panel uk-panel-box"> 
+						 	<div class=""><?php the_post_thumbnail('large'); ?></div>
+							<h4 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
+						</div>	
+					</div>											
+				 <?php endforeach; ?>
 
-		<div class="" style="background:url(<?php the_post_thumbnail_url('large') ?>)  no-repeat center center fixed; background-size:cover" >
-		 	
-		 	
-				<div class="uk-panel uk-panel-box"> 
-
-
-
-				 	<div class=""><?php the_post_thumbnail('large'); ?></div>
-						<h4 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
-						
-
-				    <?php endforeach; ?>
-
-				</div>
-			
-
-		</div>
-	</div><!-- End I Am a Jew -->
+	</div><!-- End page-sector: I Am a Jew -->
 
 
 

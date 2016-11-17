@@ -34,3 +34,9 @@ function custom_excerpt_length( $length ) {
   return 20;
 }
 add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
+
+function strip_shortcode_from_excerpt( $content ) {
+  $content = strip_shortcodes( $content );
+  return $content;
+}
+add_filter('the_excerpt', 'strip_shortcode_from_excerpt', 50);
