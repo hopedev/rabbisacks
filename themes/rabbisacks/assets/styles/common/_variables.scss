@@ -1,3 +1,18 @@
+/////////////
+// MIXINS //
+////////////
+
+/// Slightly lighten a color
+/// @access public
+/// @param {Color} $color - color to tint
+/// @param {Number} $percentage - percentage of `$color` in returned color
+/// @return {Color}
+@function tint($color, $percentage) {
+  @return mix(white, $color, $percentage);
+}
+
+
+
 // Grid settings
 // $enable-flex:           true;
 // $main-sm-columns:       12;
@@ -7,6 +22,7 @@ $icon-font-path:                                 "../fonts" !default;
 $border-line-width: 2px;
 
 
+
 // Colors
 $brand-primary:         purple; // Red
 $brand-grey: 	#F3F3F3;
@@ -14,7 +30,20 @@ $dark-grey: 	#949494;
 $brand-white: #eee;
 $navbar-background: #fff;
 
+$brand-tint: tint($brand-primary, 90%);
+
 // Set UIkit variables
+$base-em-color: #777;
+$base-body-color: #777;
+$dark-body-color: #444;
+$base-link-color: $brand-primary;
+$offcanvas-bar-width: auto;
+$nav-offcanvas-hover-background: none;
+$nav-offcanvas-active-background:none;
+
+$base-link-hover-color: darken( $brand-primary, 10% );
+$base-link-hover-text-decoration: none;
+
 $panel-box-background: none;
 //$dotnav-background: $dark-grey;
 $dotnav-background:                              rgba(128,128,128,0.9) !default;

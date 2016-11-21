@@ -20,7 +20,13 @@ function title() {
     return sprintf(__('Search Results for %s', 'sage'), get_search_query());
   } elseif (is_404()) {
     return __('Not Found', 'sage');
-  } else {
+  } elseif (is_page()) {
+      if(is_page('covenant-conversation-home')){
+        return "Latest Commentary";
+      }else{
+    return get_the_title();
+  }
+  } else{
     return get_the_title();
   }
 }

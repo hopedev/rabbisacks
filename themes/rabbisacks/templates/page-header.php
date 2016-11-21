@@ -5,5 +5,5 @@ use Roots\Sage\Titles;
 
 
 <div class="page-header uk-text-center">
-  <h1><?= Titles\title(); ?></h1>
+  <h1 class='page-title header-line'><?= Titles\title(); ?></h1>
 </div>

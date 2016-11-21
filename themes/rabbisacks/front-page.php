@@ -1,13 +1,5 @@
  <?php /* Template Name: Home */ ?>
- <div class="home-image uk-cover-background " data-uk-sticky="{top:80}"> 
-
-
-	    <img class="uk-invisible" src="" width="" height="" alt="">
-	    <div class="uk-position-cover uk-flex uk-flex-center uk-flex-middle">
-		    <div class="headertext uk-container uk-container-center uk-text-center" >Morality is taught by being lived. It is learned by doing</div>
-
-	    </div>
-    </div>
+ 
 
   <?php while (have_posts()) : the_post(); ?>
 
@@ -18,7 +10,7 @@
 	  <?php get_template_part('templates/page', 'header'); ?>
 
 
-	<div class="page-sector perspectives"><h4 class="page-sector-title">Perspectives</h4>
+	<div class="page-sector perspectives"><h4 class="page-sector-title header-line">Perspectives</h4>
 
 	  <?php // Covenant & Conversation
 
@@ -97,7 +89,7 @@
 
 	</div> <!-- End Perspectives -->
 
-	<div class="page-sector"><h4 class="page-sector-title">Commentary</h4>
+	<div class="page-sector"><h4 class="page-sector-title header-line">Commentary</h4>
 
 		<div class="uk-grid feature-trio">
 
@@ -164,7 +156,7 @@
 
 		<div class="uk-grid feature-double">
 		 	<div class="uk-width-medium-1-3"> 
-		 	<h4 class="page-sector-title">Books</h4>
+		 	<h4 class="page-sector-title header-line">Books</h4>
 				<div class="uk-panel uk-panel-box"> 
 
 				<div class="uk-slidenav-position"  data-uk-slideshow="{autoplay:true}">
@@ -204,7 +196,7 @@
 				</div>
 			</div>
 		 	<div class="uk-width-medium-2-3"> 
-		 	 	<h4 class="page-sector-title">Videos</h4>
+		 	 	<h4 class="page-sector-title header-line">Videos</h4>
 				<div class="uk-panel uk-panel-box"> 
 				<?php
 							$args = array( 'posts_per_page' => 1, 	
@@ -232,7 +224,7 @@
 
 	</div>
 
-	<div class="page-sector">Social fixed width </div>
+	<div class="page-sector header-line">Social fixed width </div>
 
 	</div>
 

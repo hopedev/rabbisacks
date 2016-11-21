@@ -21,12 +21,12 @@
 
         }
     }
+
+
 }
 
-
-
-.page-sector-title{
-    display: table;
+.header-line {
+     display: table;
     white-space: nowrap;
        text-align: center;
     text-transform: uppercase;
@@ -36,6 +36,17 @@
           display: table-cell;
           width: 50%;
     }
-    &:before {  }
-    &:after { }
 }
+
+
+// Cov & Conv homepage
+.pagetop_menu {
+    background: $brand-tint;
+}
+
+#parshotmenu {
+    // display: none;
+    ul{ margin-top: 0;}
+}
+
+

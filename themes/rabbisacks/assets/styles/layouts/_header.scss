@@ -8,12 +8,29 @@
 	color: white;
 }
 
-#sidemenu .uk-nav{ // only main ul, not any submenu's
-	padding-top: 4em;
-	padding-left: 2em;	
+#sidemenu {
+	ul{
+		padding-top: 4em;	
+			li{
+			padding-left: 2em;
+		}
+	}
+	.menu-main-navigation-container .uk-nav{ // only main ul, not any submenu's	
+		li{
+			padding-left: 2em;
+		    border-bottom: 1px solid #fff;
+		    a {
+				font-size: 2em;
+			    padding-top: 1em;
+				padding-bottom: 1em; 
+			}
+		}
+	}
 }
+
 
 .uk-navbar-brand {
 	background: $brand-primary;
 }
+
 

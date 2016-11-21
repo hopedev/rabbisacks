@@ -25,56 +25,30 @@ body, p, td {
          overflow: hidden;
 }
 
-.fullwidth{
-   margin-left: calc(-50vw + 50%);
-   margin-right: calc(-50vw + 50%);  
-}
-
 ul {
   @extend .uk-list;
 }
-
-/* Keyframes: Slide
- * Used by slideshow component
- ========================================================================== */
-/*
- * Left
-
-@-webkit-keyframes uk-slide-up {
-  0% {
-    -webkit-transform: translateY(-100%);
-  }
-  100% {
-    -webkit-transform: translateY(0);
-  }
+.content{
+     margin-top: 3em;
 }
-@keyframes uk-slide-up {
-  0% {
-    transform: translateY(-100%);
-  }
-  100% {
-    transform: translateY(0);
-  }
+#thecontent {
+       margin-top: 3em;
 }
- */
 
-/*
- * Right
+.fullwidth{
+   margin-left: calc(-50vw + 50%) !important;
+   margin-right: calc(-50vw + 50%) !important;  
+}
+time{ color: $dark-body-color;}
+.entry-summary {
+    margin-top: 1em;
+}
 
-@-webkit-keyframes uk-slide-down {
-  0% {
-    -webkit-transform: translateY(100%);
-  }
-  100% {
-    -webkit-transform: translateY(0);
-  }
+span.category_icon {
+    height: 2em;
+    width: 2em;
+    background: purple;
+    display: block;
+    float: right;
+    border-radius: 2em;
 }
-@keyframes uk-slide-down {
-  0% {
-    transform: translateY(100%);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
- */
