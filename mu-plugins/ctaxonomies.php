@@ -140,7 +140,7 @@ Class HPmedia {
         "show_ui" => true,
         "query_var" => true,
         "rewrite" => array( 'slug' => 'media', 'with_front' => false ),
-        "show_admin_column" => false,
+        "show_admin_column" => true,
 
       );
       register_taxonomy(self::$tax_type, array( 'post' ), $args );

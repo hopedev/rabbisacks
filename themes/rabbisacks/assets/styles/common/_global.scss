@@ -4,7 +4,9 @@ body { margin: 0 1em; }
 body, p, td {
   font-family: "niveau-grotesk",sans-serif;
 }
-
+h1 {
+  font-family: 'GFS Didot', serif;
+}
 .container {
       .main &{
       background: white;
@@ -43,7 +45,7 @@ time{ color: $dark-body-color;}
 .entry-summary {
     margin-top: 1em;
 }
-
+.toggleicon {width:1em}
 span.category_icon {
     height: 2em;
     width: 2em;

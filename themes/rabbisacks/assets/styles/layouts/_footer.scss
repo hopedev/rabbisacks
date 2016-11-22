@@ -1,12 +1,13 @@
 footer {
+		color: $brand-white;
 		margin-top: 1em ;
 	    padding-top: 1em;
 	    background-color: $dark-grey;
 	    section h3{
 			@extend .screen-reader-text;
 		}
-		a, p{color:$brand-white;}
-		a:hover{color: #fff; text-decoration:none}
+		a{color:$brand-white;}
+		a:hover{color: $brand-primary; text-decoration:none}
 		// ul{
 		// 	padding-left:none;
 		// 	}

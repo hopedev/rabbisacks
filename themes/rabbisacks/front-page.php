@@ -17,12 +17,9 @@
 		$args = array( 'posts_per_page' => 3,  'category' => 852 ); // Covenant & Conversation cat id= 852
 
 		$persposts = get_posts( $args );
-		 // print_r($myposts[0]->ID);
-		 // foreach ( $myposts as $post ) : setup_postdata( $post ); ?>		 
-			 	<!-- <li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>  -->
-		<?php
-		 // endforeach; 
-	 ?>
+ ?>		 
+			 	
+
 		<div class="uk-grid feature-primary">
 			<div class="uk-width-medium-2-3 uk-push-1-3"> <!-- Main Post, displays on Right side on desktop -->
 				<div class="uk-panel uk-panel-box">
@@ -31,9 +28,9 @@
 					 $post = $persposts[0];
 					setup_postdata( $post ); 
 					?>
-					
-					<div class=""><?php the_post_thumbnail('medium'); ?></div>
-					   
+					<?php if ( has_post_thumbnail() ) { ?>
+						<div class=""><?php the_post_thumbnail('medium'); ?></div>
+					 <?php } ?>  
 					<h2 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 					<div class=""><?php the_excerpt(); ?></div>
 				<?php

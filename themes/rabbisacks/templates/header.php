@@ -72,16 +72,49 @@
 
 <!-- snap down menus -->
 <?php if (is_page('covenant-conversation-home')){ ?>
-<div class="pagetop_menu">  <div class="container uk-container uk-container-center uk-clearfix"> 
-<h3 class="uk-text-center"><a data-uk-toggle="{target:'#parshotmenu'}">click to search by parsha</a></h3>
-<div id="parshotmenu" class="uk-hidden uk-clearfix">
-<?php
-wp_nav_menu(array('items_wrap'=> '%3$s', 'walker' => new Simple_Nav_Walker(), 'container'=>'div', 'container_class'=>'parshot-menu uk-grid uk-grid-width-1-2 uk-grid-width-medium-1-5' ,'menu' => 'Parshot', 'menu_class' => '' ));
- echo '</div></div></div>'; 
+      <div class="pagetop_menu">  <div class="container uk-container uk-container-center uk-clearfix"> 
+      <h3 class="uk-text-center" data-uk-toggle="{target:'#parshotmenu, .toggleicon'}">
+        <i class="uk-icon-caret-right toggleicon" aria-hidden="false"></i>
+        <i class="uk-icon-caret-down toggleicon uk-hidden" aria-hidden="true"></i>
+      click to search by parsha</h3>
+      <div id="parshotmenu" class="pagemenu uk-hidden uk-clearfix">
+      <?php
+      wp_nav_menu(array('items_wrap'=> '%3$s', 'walker' => new Simple_Nav_Walker(), 'container'=>'div', 'container_class'=>'parshot-menu uk-grid uk-grid-width-1-2 uk-grid-width-medium-1-5' ,'menu' => 'Parshot', 'menu_class' => '' ));
+       echo '</div></div></div>'; 
 
-  }   ?>
+  }   else if (is_page('writing-home')){ ?>
+      <div class="pagetop_menu">  <div class="container uk-container uk-container-center uk-clearfix"> 
+      <h3 class="uk-text-center"><a data-uk-toggle="{target:'#categorymenu'}">click to search by category</a></h3>
+      <div id="categorymenu" class="pagemenu uk-hidden uk-clearfix">
+      <ul class="uk-grid uk-grid-width-1-2 uk-grid-width-medium-1-5"
+      <?php
+      wp_list_categories(array(
+        'title_li' => ''
+    ));
+       echo '</div></div></div>'; 
+
+  }
 
 
+
+
+
+  ?>
+
+
+
+
+
+
+<div class="breadcrumbscontainer uk-container uk-container-center">
+      <?php
+      if ( function_exists('yoast_breadcrumb') ) {
+        yoast_breadcrumb('
+        <p class="breadcrumb">','</p>
+        ');
+      }
+      ?>
+      </div>
 
   
 
