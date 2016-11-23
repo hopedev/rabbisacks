@@ -35,7 +35,7 @@
       <div class="uk-grid uk-grid-width-medium-1-3">
 
 
-      <?php
+      <?php // Related posts by TAG
         $orig_post = $post;
         global $post;
         $tags = wp_get_post_tags($post->ID);

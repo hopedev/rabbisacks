@@ -23,4 +23,13 @@
   <div class="entry-summary">
     <?php the_excerpt(); ?>
   </div>
+  <?php 
+  $video = get_post_meta( get_the_ID(), 'video', true );
+  if($video){
+  	echo '<div class="video">';
+  	echo '<a class="uk-button" href="' . $video . '" data-uk-lightbox={group:\'page\'} data-lightbox-type="image" >watch</a>';
+  	echo '</div>';
+  }
+?>
+
 </article>

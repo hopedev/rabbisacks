@@ -40,6 +40,8 @@ $base-link-color: $brand-primary;
 $offcanvas-bar-width: auto;
 $nav-offcanvas-hover-background: none;
 $nav-offcanvas-active-background:none;
+$overlay-icon: "\f01d"; //play icon
+$overlay-panel-background: rgba(0,0,0,0.3);
 
 $base-link-hover-color: darken( $brand-primary, 10% );
 $base-link-hover-text-decoration: none;

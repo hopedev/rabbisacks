@@ -13,6 +13,7 @@
     "uikit": {
       "main": [
         "./js/uikit.js",
+         "./js/components/lightbox.js",
         "./js/components/slideshow.js",
         "./js/components/sticky.js",
          "./js/components/slideset.js"       
