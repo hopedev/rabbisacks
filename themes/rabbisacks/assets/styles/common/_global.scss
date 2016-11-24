@@ -1,12 +1,19 @@
 @import url('https://fonts.googleapis.com/css?family=GFS+Didot');
 
-body { margin: 0 1em; }
+body { margin: 0; }
 body, p, td {
   font-family: "niveau-grotesk",sans-serif;
 }
-h1 {
+h1, blockquote, .quote-large {
   font-family: 'GFS Didot', serif;
 }
+// font sizes
+.header-text {font-size: 50px}
+
+
+
+
+
 .container {
       .main &{
       background: white;
@@ -45,7 +52,8 @@ time{ color: $dark-body-color;}
 .entry-summary {
     margin-top: 1em;
 }
-.toggleicon {width:1em}
+.toggleicon {width:1em;}
+
 span.category_icon {
     height: 2em;
     width: 2em;
@@ -54,3 +62,22 @@ span.category_icon {
     float: right;
     border-radius: 2em;
 }
+
+
+blockquote, .quote-large{ // Quotemarks top & bottom
+  &::before{
+       color: $brand-grey;
+      content: open-quote;
+       font-size: 4em;
+      display: block;
+      padding-top: 0.3em;
+    }
+    &::after{
+         color: $brand-grey;
+      content: close-quote;
+        display: block;
+          font-size: 4em;
+         margin-top: 0.4em;
+    }
+  }
+  .quote-large::before, .quote-large::after{line-height: 0.5}

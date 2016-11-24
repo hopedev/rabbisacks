@@ -221,6 +221,46 @@
 
 	</div>
 
+	<div class="page-sector quotes"><h4 class="page-sector-title header-line">Quotes</h4>
+<?php 
+		if ( false === ( $quotes = get_transient( 'rand_quote' ) ) ) {
+		  // It wasn't there, so regenerate the data and save the transient
+
+		  $args = array(
+		     'post_type' => 'quotes',
+		     'orderby'   => 'rand',
+		     'posts_per_page' => '1', 
+		     'tax_query' => array(
+				array(
+					'taxonomy' => 'featured',
+					'field' => 'slug',
+					'terms' => 'featured'
+				)
+		  )
+		     );
+
+		  $quotes = get_posts( $args );
+
+		  //Now we store the array for one day.
+		  //Just change the last parameter for another timespan in seconds.
+		  $seconds_until_next_day = strtotime('tomorrow') - time();
+set_transient( 'rand_quote', $quotes, $seconds_until_next_day );
+		}
+
+		
+	
+		  foreach ( $quotes as $post ) : setup_postdata( $post ); 
+		  			$quote = get_post_meta( get_the_ID(), 'quote_text', true );
+		  			$quote = str_replace('"', "", $quote);
+		  			$source = get_post_meta( get_the_ID(), 'quote_place_and_date', true );
+		  ?>	
+
+					<div class="quote-large header-text"><?php echo $quote; ?> <!-- <small><?php echo $source ?></small> --></div>
+
+		<?php endforeach; ?>
+
+	</div>
+
 	<div class="page-sector header-line">Social fixed width </div>
 
 	</div>

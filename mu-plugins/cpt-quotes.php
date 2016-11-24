@@ -9,7 +9,7 @@
 
 Class HPquotes {
 
-    private static $post_type = "quote";
+    private static $post_type = "quotes";
 
     public static function init() {
         add_action("init", array(__CLASS__, "register_post_type"));
@@ -56,64 +56,75 @@ Class HPquotes {
 
 HPquotes::init();
 
+Class HPtopics {
+
+    private static $tax_type = "topics";
+
+    public static function init() {
+        add_action("init", array(__CLASS__, "register_taxonomy"));
+    }
+   public static function register_taxonomy() {
+      $labels = array(
+        'name'                       => _x( 'Topics', 'Taxonomy General Name', 'sage' ),
+        'singular_name'              => _x( 'Topic', 'Taxonomy Singular Name', 'sage' ),
+        'menu_name'                  => __( 'Topics', 'sage' ),
+        'all_items'                  => __( 'All Topics', 'sage' ),
+        'parent_item'                => __( 'Parent Topic', 'sage' ),
+        'parent_item_colon'          => __( 'Parent Topic:', 'sage' ),
+        'new_item_name'              => __( 'New Topic Name', 'sage' ),
+        'add_new_item'               => __( 'Add New Topic', 'sage' ),
+        'edit_item'                  => __( 'Edit Topic', 'sage' ),
+        'update_item'                => __( 'Update Topic', 'sage' ),
+        'separate_items_with_commas' => __( 'Separate Topic with commas', 'sage' ),
+        'search_items'               => __( 'Search topic', 'sage' ),
+        'add_or_remove_items'        => __( 'Add or remove topic', 'sage' ),
+        'choose_from_most_used'      => __( 'Choose from the most used topics', 'sage' ),
+        'not_found'                  => __( 'Not Found', 'sage' ),
+      
+      );
+      $args = array(       
+    "labels" => $labels,
+        'hierarchical'               => false,
+        'public'                     => true,
+        'show_ui'                    => true,
+        'show_admin_column'          => true,
+        'show_in_nav_menus'          => true,
+        'show_tagcloud'              => true,
+      );
+      register_taxonomy(self::$tax_type, array( 'quotes' ), $args );
+   }
+
+}
+
+HPtopics::init();
+
+Class HPfeature {
+
+    private static $tax_type = "featured";
+
+    public static function init() {
+        add_action("init", array(__CLASS__, "register_taxonomy"));
+    }
+   public static function register_taxonomy() {
+      $labels = array(
+        'name'                       => _x( 'Featured', 'Taxonomy General Name', 'sage' ),
+        'singular_name'              => _x( 'Featured', 'Taxonomy Singular Name', 'sage' ),
 
 
-// $labels = array(
-//         "name" => "Quotes",
-//         "singular_name" => "Quote",
-//         );
+      
+      );
+      $args = array(       
+    "labels" => $labels,
+        'hierarchical'               => true,
+        'public'                     => true,
+        'show_ui'                    => true,
+        'show_admin_column'          => true,
+        'show_in_nav_menus'          => true,
+        'show_tagcloud'              => true,
+      );
+      register_taxonomy(self::$tax_type, array( 'quotes' ), $args );
+   }
 
-//     $args = array(
-//         "labels" => $labels,
-//         "description" => "",
-//         "public" => true,
-//         "show_ui" => true,
-//         "has_archive" => true,
-//         "show_in_menu" => true,
-//         "exclude_from_search" => false,
-//         "capability_type" => "post",
-//         "map_meta_cap" => true,
-//         "hierarchical" => false,
-//         "rewrite" => array( "slug" => "quotes", "with_front" => true ),
-//         "query_var" => true,
-                
-//         "supports" => array( "title", "editor", "excerpt", "trackbacks", "custom-fields", "comments", "revisions", "thumbnail", "author", "page-attributes", "post-formats" ),      
-//     );
-//     register_post_type( "quotes", $args );
+}
 
-
-// Register Custom Taxonomy
-// function topics() {
-
-//     $labels = array(
-//         'name'                       => _x( 'Topics', 'Taxonomy General Name', 'text_domain' ),
-//         'singular_name'              => _x( 'Topic', 'Taxonomy Singular Name', 'text_domain' ),
-//         'menu_name'                  => __( 'Topics', 'text_domain' ),
-//         'all_items'                  => __( 'All Topics', 'text_domain' ),
-//         'parent_item'                => __( 'Parent Topic', 'text_domain' ),
-//         'parent_item_colon'          => __( 'Parent Topic:', 'text_domain' ),
-//         'new_item_name'              => __( 'New Topic Name', 'text_domain' ),
-//         'add_new_item'               => __( 'Add New Topic', 'text_domain' ),
-//         'edit_item'                  => __( 'Edit Topic', 'text_domain' ),
-//         'update_item'                => __( 'Update Topic', 'text_domain' ),
-//         'separate_items_with_commas' => __( 'Separate Topic with commas', 'text_domain' ),
-//         'search_items'               => __( 'Search topic', 'text_domain' ),
-//         'add_or_remove_items'        => __( 'Add or remove topic', 'text_domain' ),
-//         'choose_from_most_used'      => __( 'Choose from the most used topics', 'text_domain' ),
-//         'not_found'                  => __( 'Not Found', 'text_domain' ),
-//     );
-//     $args = array(
-//         'labels'                     => $labels,
-//         'hierarchical'               => false,
-//         'public'                     => true,
-//         'show_ui'                    => true,
-//         'show_admin_column'          => true,
-//         'show_in_nav_menus'          => true,
-//         'show_tagcloud'              => true,
-//     );
-//     register_taxonomy( 'topics', array( 'quotes' ), $args );
-
-// }
-
-// // Hook into the 'init' action
-// add_action( 'init', 'topics', 0 );
+HPfeature::init();
