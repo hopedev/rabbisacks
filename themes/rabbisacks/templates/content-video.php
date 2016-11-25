@@ -2,7 +2,7 @@
 
  <?php // Video category
 
-		$args = array( 'posts_per_page' => 7,  'tax_query' => array(
+		$args = array( 'posts_per_page' => 11,  'tax_query' => array(
 			array(
 				'taxonomy' => 'media',
 				'field' => 'slug',
@@ -68,10 +68,10 @@
 		</div><!-- End 2 grid -->
 
 	<div class="uk-grid uk-grid-width-medium-1-4">
-			<?php for ($x = 3; $x <= 6; $x++) { ?>
+			<?php for ( $i=$i; $i <= 10; $i++) { ?>
 		         <div class="">
 			        <div class="uk-panel uk-panel-box">
-						<?php $post = $posts[$x]; setup_postdata( $post ); ?>
+						<?php $post = $posts[$i]; setup_postdata( $post ); ?>
 							<figure class="uk-overlay  uk-overlay-hover">
 		                    <?php the_post_thumbnail('medium', array( 'class' => 'uk-align-center uk-overlay-scale' )); ?>
 		                     <div class="uk-overlay-panel uk-overlay-icon uk-overlay-background  uk-ignore"></div>
@@ -101,7 +101,8 @@
 		wp_reset_postdata();
 	  ?>
 
-
+<?php $term_link = get_term_link( (int) 849);  // media - video term id ?>
+	<h2 class="uk-align-right"><a href="<?php echo $term_link ?>" > All Videos > </a></h2>
 
 	
 

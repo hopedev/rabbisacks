@@ -6,17 +6,17 @@
 			array(
 				'taxonomy' => 'media',
 				'field' => 'slug',
-				'terms' => 'text'
+				'terms' => 'audio'
 			)
 	) ); // Books
-		$persposts = get_posts( $args );
+		$audioposts = get_posts( $args );
 	?>		 
 		<div class="uk-grid feature-primary">
 			<div class="uk-width-medium-2-3"> <!-- Main Post, displays on Right side on desktop -->
 				<div class="uk-panel uk-panel-box">
 
 				<?php 
-					 $post = $persposts[0];
+					 $post = $audioposts[0];
 					setup_postdata( $post ); 
 					?>
 					
@@ -24,7 +24,6 @@
 					   
 					<h2 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 					<div class=""><?php the_excerpt(); ?></div>
-					<div class="uk-button order">Order Now</div>
 				<?php
 				 // endforeach; 
 			 ?>
@@ -38,13 +37,12 @@
 			            <div class="uk-panel uk-panel-box">
 
 					<?php 
-						 $post = $persposts[1];
+						 $post = $audioposts[1];
 						setup_postdata( $post ); 
 						?>
 						<div class=""><?php the_post_thumbnail('medium', array( 'class' => 'uk-align-center' )); ?></div>
 						<h3 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 						<div class=""><?php the_excerpt(); ?></div>
-						<div class="uk-button order">Order Now</div>
 					<?php
 					 // endforeach; 
 				 ?>
@@ -54,13 +52,12 @@
 		            	 <div class="uk-panel uk-panel-box">
 
 					<?php 
-						 $post = $persposts[2];
+						 $post = $audioposts[2];
 						setup_postdata( $post ); 
 						?>
 						<div class=""><?php the_post_thumbnail('medium', array( 'class' => 'uk-align-center' )); ?></div>
 						<h3 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 						<div class=""><?php the_excerpt(); ?></div>
-						<div class="uk-button order">Order Now</div>
 					<?php
 					 // endforeach; 
 				 ?>

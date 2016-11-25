@@ -135,14 +135,14 @@ Header image code is in header.php due to sticky
 										array(
 											'taxonomy' => 'media',
 											'field' => 'slug',
-											'terms' => 'feature'
+											'terms' => 'series'
 										)
 								)
 				);
 				$persposts = get_posts( $args );
 				foreach ( $persposts as $post ) : setup_postdata( $post ); ?>	
 
-					<div class="" style="background:url(<?php the_post_thumbnail_url('large') ?>)  no-repeat center center fixed; background-size:cover" >		 	
+					<div class="" style="background:url(<?php the_post_thumbnail_url('large') ?>)  no-repeat center centerw; background-size:cover" >		 	
 						<div class="uk-panel uk-panel-box"> 
 						 	<div class=""><?php the_post_thumbnail('large'); ?></div>
 							<h4 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
@@ -268,7 +268,7 @@ set_transient( 'rand_quote', $quotes, $seconds_until_next_day );
 	</div>
 
 	<div class="page-sector header-line">Social fixed width </div>
-
+<?php //echo do_shortcode('[hype_social_tiles]'); ?>
 	</div>
 
 <?php endwhile; ?>
