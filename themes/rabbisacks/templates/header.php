@@ -62,9 +62,26 @@
 
 </header>
 
+<!--  -->
+<!-- STICKY BG IMAGE ON HOMEPAGE -->
+<!--  -->
 <?php if (is_front_page()){ ?>
-<div class="home-image uk-cover-background fullwidth" data-uk-sticky="{top:80}"> 
 
+
+      <?php 
+      $banners = get_post_meta( get_the_ID(), 'header_images', true );
+      
+      if( $banners ) {
+        $i = rand(0,$banners-1);
+         $img = (int) get_post_meta( get_the_ID(), 'header_images_' . $i . '_image', true );
+           $banner_url =  wp_get_attachment_image_src( $img, 'full' ) ;
+           //print_r( $banner_url[0]) ;
+            
+         }
+      
+      ?>
+
+<div class="home-image uk-cover-background fullwidth" data-uk-sticky="{top:80}" style="background-image:url(<?php echo $banner_url[0] ?>)"> 
 
       <img class="uk-invisible" src="" width="" height="" alt="">
       <div class="uk-position-cover uk-flex uk-flex-center uk-flex-middle">
