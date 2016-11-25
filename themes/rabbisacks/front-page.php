@@ -1,4 +1,10 @@
- <?php /* Template Name: Home */ ?>
+ <?php
+ /* Template Name: Home 
+
+Header image code is in header.php due to sticky
+
+ */ 
+ ?>
  
 
   <?php while (have_posts()) : the_post(); ?>

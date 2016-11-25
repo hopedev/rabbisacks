@@ -75,8 +75,6 @@
         $i = rand(0,$banners-1);
          $img = (int) get_post_meta( get_the_ID(), 'header_images_' . $i . '_image', true );
            $banner_url =  wp_get_attachment_image_src( $img, 'full' ) ;
-           //print_r( $banner_url[0]) ;
-            
          }
       
       ?>
@@ -85,7 +83,18 @@
 
       <img class="uk-invisible" src="" width="" height="" alt="">
       <div class="uk-position-cover uk-flex uk-flex-center uk-flex-middle">
-        <div class="headertext uk-container uk-container-center uk-text-center" >Morality is taught by being lived. It is learned by doing</div>
+        <div class="headertext uk-container uk-container-center uk-text-center" >
+
+      <?php // Get random one of selected quotes
+      $headquotes = get_post_meta( get_the_ID(), 'selected_quotes', true );     
+      if( $headquotes ) {
+            $i = rand(0,$banners-1);
+            $quoteID = ($headquotes[$i]);
+            $headquote = get_post_meta( $quoteID, 'quote_text', true );
+            echo $headquote;
+          }    
+      ?>
+        </div>
 
       </div>
     </div>
