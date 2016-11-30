@@ -43,7 +43,16 @@
       <nav class="uk-navbar">
          <div class="container uk-container uk-container-center">
             <div class="uk-navbar-brand">
-                <a class="" href="<?= esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a>
+               
+
+                 <a class="brand " href="<?= esc_url(home_url('/')); ?>">
+
+                 <img src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/logo-sig@2x.png" />
+                 <img src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/logo-office@2x.png" />
+</a>
+
+
+
             </div>
          
               <div class="nav-primary uk-navbar-flip">
