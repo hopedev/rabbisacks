@@ -93,8 +93,9 @@
             $headquote = get_post_meta( $quoteID, 'quote_text', true );
             echo $headquote;
           }    
-      ?>
+      ?><h2 class="quote-att">Rabbi Lord Jonathan Sacks</h2>
         </div>
+
 
       </div>
     </div>

@@ -72,7 +72,8 @@
 	  ?>
 
 
-<h2 class="uk-align-right"> All Writing > </h2>
+<?php $term_link = get_term_link( (int) 894);  //print_r( $term_link ); ?>
+	<h2 class="uk-align-right"><a href="<?php echo $term_link ?>" > All Audio > </a></h2>
 
  <?php 
  if ( has_post_thumbnail() ) { 

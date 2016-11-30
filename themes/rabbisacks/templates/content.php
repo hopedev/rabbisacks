@@ -1,3 +1,5 @@
+<!-- Content for an archive page -->
+
 <article <?php post_class('uk-article'); ?>>
   <header>
 

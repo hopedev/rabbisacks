@@ -1,3 +1,4 @@
+// HOMEPAGE
 .home{
     .page-header {
         @extend .hide-text;
@@ -26,22 +27,62 @@
           font-family: 'GFS Didot', serif;
           font-style: italic;
       }
-
+      .quote-att{
+        color: #fff;
+        padding-top: 2em;
+      }
+      .selected-bg {
+        min-height: 700px;
+        .uk-panel-body{
+            font-size: 150%;
+            a i{
+                font-size: 400%;
+            }
+        }
+      }
 }
 
-.header-line {
-     display: table;
+// on homepage & landing pages
+.header-line { 
+    display: table;
     white-space: nowrap;
-       text-align: center;
+    text-align: center;
     text-transform: uppercase;
+    color: $brand-primary;
+    font-weight: 500;
+    font-style: normal;
+    letter-spacing: 3px;
     &:before, &:after {
-          background: linear-gradient(to bottom, $dark-grey, $dark-grey) no-repeat center / 90% 2px;
+          background: linear-gradient(to bottom, $dark-grey, $dark-grey) no-repeat center / 100% 1px;
           content: '';
           display: table-cell;
           width: 50%;
     }
 }
 
+.page-sector > .uk-grid {
+    padding: 3em 0;
+}
+
+.uk-panel-box{
+        margin-left: auto;
+    margin-right: auto;
+}
+.feature-primary .uk-panel-box {
+    max-width: 636px;
+    .uk-panel-body{
+    max-width: 475px;
+    text-align: center;
+    margin: 0 auto;
+    }
+}
+.feature-secondary .uk-panel-box, .feature-trio .uk-panel-box {
+    max-width: 300px;
+}
+
+.page-sector.selected .page-sector-title {
+    padding-top: 2em;
+}
 
 // Cov & Conv homepage
 .pagetop_menu {

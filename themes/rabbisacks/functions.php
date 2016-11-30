@@ -43,6 +43,31 @@ add_filter('the_excerpt', 'strip_shortcode_from_excerpt', 50);
 
 
 
+// Check homepage IDs here
+function get_landing_pages($page){
+  switch ($page) {
+      case 'audio':
+          $page_id = 13266;
+          break;
+      case 'video':
+          $page_id = 13236;
+          break;
+      case 'text':
+          $page_id = 13232;
+          break;
+      case 'cc':
+          $page_id = 13229;
+          break;
+      case 'books':
+          $page_id = 4243;
+          break;
+  }
+
+return $page_id;
+
+}
+
+
 // In your functions.php
 class Simple_Nav_Walker extends Walker_Nav_Menu {
 

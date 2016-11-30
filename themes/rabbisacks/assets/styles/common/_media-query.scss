@@ -43,11 +43,30 @@
 	            min-height: 669px;
 			    }
 			    .headertext{
-			        font-size: 5rem;
-			        padding-top: 4rem;
+			        font-size: 50px;
+			        padding: 7.5em 4em 4em;
 			    }
+				.header-text {    
+					font-size: 50px;
+				    text-align: center;
+				}
+
 			}
-		
+
+			// font sizes
+			h3.entry-title {
+			    line-height: 1.2;
+			    a{color: $text-dark;}
+			    .feature-secondary &, .feature-trio & {
+					font-size: 1.6rem;			    	
+			    }
+			    .feature-primary & {
+					font-size: 2.6rem;			    	
+			    }
+
+			}
+			
+	
 	 }
 
 	

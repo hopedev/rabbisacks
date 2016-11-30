@@ -11,7 +11,7 @@ Header image code is in header.php due to sticky
 
 
 
-	<div class="container uk-container uk-container-center uk-text-center">
+	<div class="container uk-container uk-container-center">
   
 	  <?php get_template_part('templates/page', 'header'); ?>
 
@@ -26,8 +26,8 @@ Header image code is in header.php due to sticky
  ?>		 
 			 	
 
-		<div class="uk-grid feature-primary">
-			<div class="uk-width-medium-2-3 uk-push-1-3"> <!-- Main Post, displays on Right side on desktop -->
+		<div class="uk-grid uk-grid-collapse">
+			<div class="uk-width-medium-2-3 uk-push-1-3 feature-primary"> <!-- Main Post, displays on Right side on desktop -->
 				<div class="uk-panel uk-panel-box">
 
 				<?php 
@@ -35,10 +35,11 @@ Header image code is in header.php due to sticky
 					setup_postdata( $post ); 
 					?>
 					<?php if ( has_post_thumbnail() ) { ?>
-						<div class=""><?php the_post_thumbnail('medium'); ?></div>
+						<div class="uk-panel-teaser uk-align-center"><?php the_post_thumbnail('large-thumb', array( 'class' => 'uk-align-center' )); ?></div>
 					 <?php } ?>  
-					<h2 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-					<div class=""><?php the_excerpt(); ?></div>
+					 <div class="uk-panel-body">
+					<h3 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+					<?php the_excerpt(); ?></div>
 				<?php
 				 // endforeach; 
 			 ?>
@@ -55,7 +56,7 @@ Header image code is in header.php due to sticky
 						 $post = $persposts[1];
 						setup_postdata( $post ); 
 						?>
-						<div class=""><?php the_post_thumbnail('thumbnail'); ?></div>
+						<div class="uk-panel-teaser uk-align-center"><?php the_post_thumbnail('thumbnail', array( 'class' => 'uk-align-center' )); ?></div>
 						<h3 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 						<div class=""><?php the_excerpt(); ?></div>
 					<?php
@@ -70,7 +71,7 @@ Header image code is in header.php due to sticky
 						 $post = $persposts[2];
 						setup_postdata( $post ); 
 						?>
-						<div class=""><?php the_post_thumbnail('thumbnail'); ?></div>
+						<div class="uk-panel-teaser uk-align-center"><?php the_post_thumbnail('thumbnail', array( 'class' => 'uk-align-center' )); ?></div>
 						<h3 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 						<div class=""><?php the_excerpt(); ?></div>
 					<?php
@@ -114,8 +115,8 @@ Header image code is in header.php due to sticky
 		 foreach ( $postslist as $post ) : setup_postdata( $post ); ?>		
 		 	<div class="uk-width-medium-1-3"> 
 				<div class="uk-panel uk-panel-box"> 
-				 	<div class=""><?php the_post_thumbnail('thumbnail'); ?></div>
-						<h4 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
+				 	<div class="uk-panel-teaser uk-align-center"><?php the_post_thumbnail('thumbnail', array( 'class' => 'uk-align-center' )); ?></div>
+						<h3 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 						<div class=""><?php the_excerpt(); ?></div>
 			 	</div>
 		 	</div>
@@ -127,32 +128,48 @@ Header image code is in header.php due to sticky
 	 	</div>
 	</div> <!-- End Commentary -->
 
-	<div class="page-sector feature">
-		<h4 class="page-sector-title">Why I am a Jew</h4>
-			<?php
-				$args = array( 'posts_per_page' => 1, 	
-								'tax_query' => array(
-										array(
-											'taxonomy' => 'media',
-											'field' => 'slug',
-											'terms' => 'series'
-										)
-								)
-				);
-				$persposts = get_posts( $args );
-				foreach ( $persposts as $post ) : setup_postdata( $post ); ?>	
+	<div class="page-sector selected">
+	<?php
+	$featured = get_post_meta( get_the_ID(), 'featured_post', true );
+	if( $featured ) {
+		$post_id =  $featured[0] ;
+		$tagline = get_post_meta( get_the_ID(), 'feature_subtitle', true );
+		$video = get_post_meta( get_the_ID(), 'video', true );
 
-					<div class="" style="background:url(<?php the_post_thumbnail_url('large') ?>)  no-repeat center centerw; background-size:cover" >		 	
+		$args = array( 
+					'posts_per_page' => 1, 
+					'post__in' => array($post_id)
+				);
+
+				$posts = get_posts( $args );
+				foreach ( $posts as $post ) : setup_postdata( $post ); ?>	
+
+					<div class="selected-bg" style="background:url(<?php the_post_thumbnail_url('full') ?>)  no-repeat center center; background-size:cover" >	
+	<h4 class="page-sector-title header-line"><?php the_title(); ?></h4>					 	
 						<div class="uk-panel uk-panel-box"> 
-						 	<div class=""><?php the_post_thumbnail('large'); ?></div>
-							<h4 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
+						 	<div class="uk-align-center"><?php //the_post_thumbnail('large-video-thumb', array( 'class' => 'uk-align-center' )); ?></div>
+							 <div class="uk-panel-body">
+								 
+								 	<?php
+								 	if ($tagline){ ?>
+								 		<div class="uk-text-center"><?php echo $tagline; ?></div>
+								 	<?php }
+
+								 	$video = get_post_meta( get_the_ID(), 'video', true );
+								  if($video){
+								  	echo '<a class="video-play uk-text-center" href="' . $video . '"  data-uk-lightbox={group:\'page\'} data-lightbox-type="image"><i class="uk-icon-play-circle-o uk-align-center"></i></a>';
+								  }
+
+								 	?>
+								 </div>
 						</div>	
 					</div>											
 				 <?php endforeach; ?>
 
 	</div><!-- End page-sector: I Am a Jew -->
 
-
+	<?php }
+?>
 
 
 	<div class="page-sector"> 
@@ -175,7 +192,7 @@ Header image code is in header.php due to sticky
 
 			        <li>
 			        	<div class="uk-panel uk-panel-box"> 
-						 	<div class=""><?php the_post_thumbnail('thumbnail'); ?></div>
+						 	<div class=""><?php the_post_thumbnail('book-thumb'); ?></div>
 								<h4 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
 								<!-- <div class=""><?php the_excerpt(); ?></div> -->
 					 	</div>
@@ -198,7 +215,7 @@ Header image code is in header.php due to sticky
 
 				</div>
 			</div>
-		 	<div class="uk-width-medium-2-3"> 
+		 	<div class="uk-width-medium-2-3 feature-primary"> 
 		 	 	<h4 class="page-sector-title header-line">Videos</h4>
 				<div class="uk-panel uk-panel-box"> 
 				<?php
@@ -213,11 +230,22 @@ Header image code is in header.php due to sticky
 							);
 							$persposts = get_posts( $args );
 							 foreach ( $persposts as $post ) : setup_postdata( $post ); ?>	
-
-
-				 	<div class=""><?php the_post_thumbnail('medium'); ?></div>
+				
+					<figure class="uk-overlay  uk-overlay-hover">
+						<?php the_post_thumbnail('large-video-thumb', array( 'class' => 'uk-align-center' )); ?>
+						<div class="uk-overlay-panel uk-overlay-icon uk-overlay-background  uk-ignore"></div>
+						 <?php 
+							  $video = get_post_meta( get_the_ID(), 'video', true );
+							  if($video){
+							  	echo '<a class="uk-position-cover" href="' . $video . '" data-uk-lightbox={group:\'page\'} data-lightbox-type="image" ></a>';
+							  }
+							?>
+		                      </figure>
+						
+					  
+				 <div class="uk-panel-body">
 						<h4 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
-						<div class=""><?php the_excerpt(); ?></div>
+						<?php the_excerpt(); ?></div>
 
 				    <?php endforeach; ?>
 
@@ -268,7 +296,12 @@ set_transient( 'rand_quote', $quotes, $seconds_until_next_day );
 	</div>
 
 	<div class="page-sector header-line">Social fixed width </div>
-<?php //echo do_shortcode('[hype_social_tiles]'); ?>
+<?php 
+echo do_shortcode('[ff id="1"]'); 
+
+?>
+
+
 	</div>
 
 <?php endwhile; ?>

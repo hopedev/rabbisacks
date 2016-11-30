@@ -1,15 +1,20 @@
 @import url('https://fonts.googleapis.com/css?family=GFS+Didot');
 
 body { margin: 0; }
-body, p, td {
+body, p, td,.header-line{
   font-family: "niveau-grotesk",sans-serif;
 }
-h1, blockquote, .quote-large {
+
+h1, blockquote, .quote-large, .entry-title {
   font-family: 'GFS Didot', serif;
 }
-// font sizes
-.header-text {font-size: 50px}
 
+
+// font sizes
+// .header-text {font-size: 50px;}
+h3.entry-title {
+    a{color: $text-dark;}
+}
 
 
 

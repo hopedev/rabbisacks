@@ -19,14 +19,15 @@
 // $sidebar-sm-columns:    4;
 $spacer: 1rem; // setting a referenced bootstrap variable
 $icon-font-path:                                 "../fonts" !default;
-$border-line-width: 2px;
+$border-line-width: 1px;
 
 
 
 // Colors
-$brand-primary:         purple; // Red
+$brand-primary:         #6c086b; // Red
 $brand-grey: 	#F3F3F3;
 $dark-grey: 	#949494;
+$text-dark: 	#444;
 $brand-white: #eee;
 $navbar-background: #fff;
 
@@ -35,7 +36,7 @@ $brand-tint: tint($brand-primary, 90%);
 // Set UIkit variables
 $base-em-color: #777;
 $base-body-color: #777;
-$dark-body-color: #444;
+$dark-body-color: $text-dark;
 $base-link-color: $brand-primary;
 $offcanvas-bar-width: auto;
 $nav-offcanvas-hover-background: none;
