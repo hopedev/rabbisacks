@@ -16,7 +16,10 @@
 
 	/* medium Devices, Tablets */
 	@media only screen and (min-width : 768px){
-
+		.fullwidth{
+		   margin-left: calc(-50vw + 50%) !important;
+		   margin-right: calc(-50vw + 50%) !important;  
+		}
 		.alignleft {
 		    float: left;
 		    //margin-right: ($line-height-computed / 2);
@@ -25,6 +28,12 @@
 		    float: right;
 		    //margin-left: ($line-height-computed / 2);
 		  }
+
+		  #sidemenu .menu-main-navigation-container .uk-nav li a {font-size: 2em;}
+
+			.page-sector > .uk-grid { padding: 3em 0;}			
+
+
 
 		  .feature-left{
 			     	border-width: 0;
@@ -43,15 +52,16 @@
 	            min-height: 669px;
 			    }
 			    .headertext{
-			        font-size: 50px;
+			        //font-size: 50px;
 			        padding: 7.5em 4em 4em;
 			    }
 				.header-text {    
-					font-size: 50px;
+					//font-size: 50px;
 				    text-align: center;
 				}
 
 			}
+	
 
 			// font sizes
 			h3.entry-title {
@@ -65,7 +75,7 @@
 			    }
 
 			}
-			
+
 	
 	 }
 

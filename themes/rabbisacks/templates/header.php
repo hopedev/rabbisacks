@@ -2,14 +2,16 @@
 
       <div class="topbanner uk-clearfix">
        <div class="container uk-container uk-container-center">
-       <div class="searchbox">
 
+       <div id="searchbox" class="uk-hidden">
+           <div class="uk-align-right"  data-uk-toggle="{target:'#searchbox'}"><i class="uk-icon-times"></i></div>
+          <?php get_search_form(); ?>
        </div>
 
-          <div class="nav-primary uk-navbar-flip">
+          <div class="nav-social uk-navbar-flip">
             <?php
             if (has_nav_menu('social_navigation')) :
-              wp_nav_menu(['theme_location' => 'social_navigation', 'menu_class' => 'uk-navbar-nav nav', 'walker' => new Walker_UIKIT()]);
+              wp_nav_menu(['theme_location' => 'social_navigation', 'menu_class' => 'nav', 'walker' => new Walker_UIKIT()]);
             endif;
             ?>
         </div>
@@ -44,17 +46,20 @@
                 <a class="" href="<?= esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a>
             </div>
          
-              <div class="nav-primary">
-                  <?php
+              <div class="nav-primary uk-navbar-flip">
+                <ul class="nav uk-navbar-flip">
+                    <li><a href="#sidemenu"  class="uk-navbar-toggle" data-uk-offcanvas=""> </a>  </li>
+                    <li><a href=# class="" data-uk-toggle="{target:'#searchbox'}"> <i class="uk-icon-search"> </i> </a></li>
+              </ul>
+
+              <?php
                   if (has_nav_menu('primary_navigation')) :
-                    wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'uk-navbar-nav nav', 'walker' => new Walker_UIKIT()]);
+                    wp_nav_menu(['theme_location' => 'primary_navigation', 'container_class'=>  'uk-navbar-flip', 'menu_class' => 'uk-navbar-nav nav ', 'walker' => new Walker_UIKIT()]);
                   endif;
                   ?>
-              </div>
+      
 
-              <div class="uk-navbar-flip">
-                     <a href="#sidemenu"  class="uk-navbar-toggle" data-uk-offcanvas=""> </a>  
-                <span>Search</span>
+
         
           </div>
         </div>
@@ -83,7 +88,7 @@
 
       <img class="uk-invisible" src="" width="" height="" alt="">
       <div class="uk-position-cover uk-flex uk-flex-center uk-flex-middle">
-        <div class="headertext uk-container uk-container-center uk-text-center" >
+        <div class="headertext uk-container uk-container-center uk-text-center uk-heading-large" >
 
       <?php // Get random one of selected quotes
       $headquotes = get_post_meta( get_the_ID(), 'selected_quotes', true );     

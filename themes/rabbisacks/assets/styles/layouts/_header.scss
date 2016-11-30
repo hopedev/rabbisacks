@@ -8,6 +8,15 @@
 	color: white;
 }
 
+#menu-top-social-nav {
+	&>li>a
+	{
+		color: #fff;
+		font-size: 100%;
+	}
+
+}
+
 #sidemenu {
 	ul{
 		padding-top: 4em;	

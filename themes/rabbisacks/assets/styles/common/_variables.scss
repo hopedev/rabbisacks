@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=GFS+Didot');
+
 /////////////
 // MIXINS //
 ////////////
@@ -38,9 +40,15 @@ $base-em-color: #777;
 $base-body-color: #777;
 $dark-body-color: $text-dark;
 $base-link-color: $brand-primary;
+
+$navbar-nav-font-family: "niveau-grotesk",sans-serif;
+$navbar-nav-hover-background: transparent;
+$navbar-nav-hover-color:$brand-primary;
+
 $offcanvas-bar-width: auto;
 $nav-offcanvas-hover-background: none;
 $nav-offcanvas-active-background:none;
+
 $overlay-icon: "\f01d"; //play icon
 $overlay-panel-background: rgba(0,0,0,0.3);
 

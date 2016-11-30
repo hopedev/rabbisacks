@@ -289,7 +289,7 @@ set_transient( 'rand_quote', $quotes, $seconds_until_next_day );
 		  			$source = get_post_meta( get_the_ID(), 'quote_place_and_date', true );
 		  ?>	
 
-					<div class="quote-large header-text"><?php echo $quote; ?> <!-- <small><?php echo $source ?></small> --></div>
+					<div class="quote-large header-text uk-heading-large"><?php echo $quote; ?> <!-- <small><?php echo $source ?></small> --></div>
 
 		<?php endforeach; ?>
 

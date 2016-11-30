@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=GFS+Didot');
-
 body { margin: 0; }
 body, p, td,.header-line{
   font-family: "niveau-grotesk",sans-serif;
@@ -52,10 +50,7 @@ ul {
        margin-top: 3em;
 }
 
-.fullwidth{
-   margin-left: calc(-50vw + 50%) !important;
-   margin-right: calc(-50vw + 50%) !important;  
-}
+
 time{ color: $dark-body-color;}
 .entry-summary {
     margin-top: 1em;
