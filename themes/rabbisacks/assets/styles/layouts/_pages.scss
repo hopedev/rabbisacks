@@ -9,6 +9,7 @@
             min-height: 235px;
                 z-index: -50;
     }
+
     .headertext{
         color: #fff;
         // font-size: 2rem;
@@ -45,6 +46,11 @@
         }
       }
 }
+.home .content, .home #thecontent,
+.search .thecontent,
+.archive .thecontent {
+           margin-top: 3em;
+    }
 
 // on homepage & landing pages
 .header-line { 

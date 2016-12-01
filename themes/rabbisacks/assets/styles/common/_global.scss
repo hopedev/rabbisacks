@@ -2,8 +2,8 @@ body { margin: 0; }
 body, p, td,.header-line{
   font-family: "niveau-grotesk",sans-serif;
 }
-
-h1, blockquote, .quote-large, .entry-title {
+.uk-article-title a {color:$brand-primary}
+h1, blockquote, blockquote p, .quote-large, .entry-title {
   font-family: 'GFS Didot', serif;
 }
 
@@ -60,12 +60,8 @@ h3.entry-title {
 ul {
   @extend .uk-list;
 }
-.content{
-     margin-top: 3em;
-}
-#thecontent {
-       margin-top: 3em;
-}
+
+
 
 
 time{ color: $dark-body-color;}

@@ -1,5 +1,5 @@
 <?php get_template_part('templates/page', 'header'); ?>
-
+	<div class="thecontent uk-container uk-container-center">
 <?php if (!have_posts()) : ?>
   <div class="alert alert-warning">
     <?php _e('Sorry, no results were found.', 'sage'); ?>
@@ -12,3 +12,4 @@
 <?php endwhile; ?>
 
 <?php the_posts_navigation(); ?>
+</div>

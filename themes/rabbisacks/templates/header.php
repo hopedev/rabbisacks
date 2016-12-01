@@ -47,8 +47,8 @@
 
                  <a class="brand " href="<?= esc_url(home_url('/')); ?>">
 
-                 <img src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/logo-sig@2x.png" />
-                 <img src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/logo-office@2x.png" />
+                 <img class="logo" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/logo-sig@2x.png" />
+                 <img class="logo-office"  src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/logo-office@2x.png" />
 </a>
 
 

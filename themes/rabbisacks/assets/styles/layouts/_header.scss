@@ -7,12 +7,30 @@
 	background-color: black;
 	color: white;
 }
+.uk-navbar-brand {
+	// 
+}
+.brand img{ 
+	&.logo{	width:174px;background: $brand-primary;
+	}
+	&.logo-office{	width:261px;}
+	height: auto;
 
+}
+.nav-social{
+	.nav>li>a, .uk-navbar-nav>li>a{
+			height:40px;
+	}
+
+
+}
+//.nav>li>a, .uk-navbar-nav>li>a
 #menu-top-social-nav {
 	&>li>a
 	{
 		color: #fff;
 		font-size: 100%;
+		height:40px;
 	}
 
 }
@@ -38,8 +56,6 @@
 }
 
 
-.uk-navbar-brand {
-	background: $brand-primary;
-}
+
 
 .pagemenu {padding: 2em 0;}

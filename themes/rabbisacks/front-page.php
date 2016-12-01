@@ -129,6 +129,7 @@ Header image code is in header.php due to sticky
 	</div> <!-- End Commentary -->
 
 	<div class="page-sector selected">
+	
 	<?php
 	$featured = get_post_meta( get_the_ID(), 'featured_post', true );
 	if( $featured ) {
@@ -279,10 +280,7 @@ Header image code is in header.php due to sticky
 		  //Just change the last parameter for another timespan in seconds.
 		  $seconds_until_next_day = strtotime('tomorrow') - time();
 set_transient( 'rand_quote', $quotes, $seconds_until_next_day );
-		}
-
-		
-	
+		}	
 		  foreach ( $quotes as $post ) : setup_postdata( $post ); 
 		  			$quote = get_post_meta( get_the_ID(), 'quote_text', true );
 		  			$quote = str_replace('"', "", $quote);
