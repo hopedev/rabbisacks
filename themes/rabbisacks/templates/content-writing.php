@@ -22,8 +22,11 @@
 					
 					<?php if ( has_post_thumbnail() ) { ?>
 						<div class="uk-panel-teaser uk-align-center books-homepage featured-image"><?php the_post_thumbnail('medium', array( 'class' => 'uk-align-center' )); ?></div>
+										<?php
+				}
+			 ?>
 					    <div class="uk-panel-body">
-					<h3 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+					<h3 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 					<div class=""><?php the_excerpt(); ?></div>
 					</div>
 				<?php
