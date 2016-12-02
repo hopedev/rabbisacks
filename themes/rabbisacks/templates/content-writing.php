@@ -11,8 +11,8 @@
 	) ); // Books
 		$textposts = get_posts( $args );
 	?>		 
-		<div class="uk-grid feature-primary">
-			<div class="uk-width-medium-2-3"> <!-- Main Post, displays on Right side on desktop -->
+		<div class="uk-grid  uk-grid-collapse">
+			<div class="uk-width-medium-2-3 feature-primary"> <!-- Main Post, displays on Right side on desktop -->
 				<div class="uk-panel uk-panel-box">
 
 				<?php 
@@ -20,19 +20,21 @@
 					setup_postdata( $post ); 
 					?>
 					
-					<div class=""><?php the_post_thumbnail('medium', array( 'class' => 'uk-align-center' )); ?></div>
-					   
-					<h2 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+					<?php if ( has_post_thumbnail() ) { ?>
+						<div class="uk-panel-teaser uk-align-center books-homepage featured-image"><?php the_post_thumbnail('medium', array( 'class' => 'uk-align-center' )); ?></div>
+					    <div class="uk-panel-body">
+					<h3 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 					<div class=""><?php the_excerpt(); ?></div>
+					</div>
 				<?php
 				 // endforeach; 
 			 ?>
 				 </div>
 			</div>
 
-			<div class="uk-width-medium-1-3">
+			<div class="uk-width-medium-1-3 feature-right feature-secondary">
 
-				<div class="uk-grid feature-secondary feature-right">
+				<div class="uk-grid uk-grid-collapse">
 		            <div class="uk-width-1-1">
 			            <div class="uk-panel uk-panel-box">
 

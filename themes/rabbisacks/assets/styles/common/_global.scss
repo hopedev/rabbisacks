@@ -7,31 +7,29 @@ h1, blockquote, blockquote p, .quote-large, .entry-title {
   font-family: 'GFS Didot', serif;
 }
 
-
 // font sizes
 // .header-text {font-size: 50px;}
 h3.entry-title {
     a{color: $text-dark;}
 }
 
-
-
 .wrap .content{
   // color or texture?
   background: #fff;
 }
-.container {
-      .main &{
-      background: white;
-      }  
 
+.container {
 	 @extend .uk-container;
 	 @extend .uk-container-center; 
 
     .main &{
       background: white;
-      }  
+    }  
+    .container--inner{
+      padding: 2em;
+    }
 }
+
 
 // hide text for image replacement
 .hide-text {
@@ -97,3 +95,9 @@ blockquote, .quote-large{ // Quotemarks top & bottom
     }
   }
   .quote-large::before, .quote-large::after{line-height: 0.5}
+
+
+.featured-image img{
+  @extend .uk-align-center;
+  display: block;
+}

@@ -46,9 +46,8 @@
         }
       }
 }
-.home .content, .home #thecontent,
-.search .thecontent,
-.archive .thecontent {
+.home .page-sector:first-of-type, 
+.search .thecontent {
            margin-top: 3em;
     }
 
@@ -94,9 +93,20 @@
     padding-top: 2em;
 }
 
+ .page-title {
+    @extend .header-line;
+}
+
+
+
 // Cov & Conv homepage
-.pagetop_menu {
+.pagetop_menu .container--inner {
     background: $brand-tint;
+        padding: 0 1em;
+        h3{
+            padding-top: 10px;
+            padding-bottom: 10px; 
+        }
 }
 
 #parshotmenu {
@@ -109,5 +119,6 @@
     padding-top: 2em;
     border-top: 1px solid $dark-grey;
 }
+
 
 

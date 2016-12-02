@@ -1,7 +1,14 @@
-.archive article {
-    border-bottom: 1px solid $dark-grey;
-    padding-bottom: 1em;
+.archive {
+	.thecontent {
+       margin-top: 3em;
+   }
+	article {
+	    border-bottom: 1px solid $dark-grey;
+	    padding-bottom: 1em;
+	}
+
 }
+
 .single-post {
 	.featured-image img{
 		display:block;
@@ -48,4 +55,15 @@ article.post footer{
 	    margin-right: 5px;
 	}
 
+}
+
+.single-books {
+	h1{font-size: 200%;}
+	.buy{padding: 3em;}
+	.entry-content{
+		margin-top: 2em
+	}
+	.featured-image img{
+		@include box-shadow(2px, 7px, 24px, $text-dark) ;
+	}
 }

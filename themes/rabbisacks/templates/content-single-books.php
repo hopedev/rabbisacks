@@ -1,23 +1,46 @@
 <?php while (have_posts()) : the_post(); ?>
   <article <?php post_class(); ?>>
-    <header>
-      <h1 class="entry-title"><?php the_title(); ?></h1>
-      <?php get_template_part('templates/entry-meta'); ?>
-      <div>
-     <?php the_field ('book_sub_heading'); ?>
+
+
+  <div class="uk-grid uk-grid-width-medium-1-2">
+    <div>
+       <div class="featured-image">
+     <?php the_post_thumbnail('book-home'); ?>
      </div>
-       <time><strong>Publication date:</strong> <?php the_field ('publication_date'); ?></time> 
-   
-    </header>
+
+    </div>
+    <div>
+          <header>
+
+          <h1 class="entry-title"><?php the_title(); ?></h1>
+          <?php //get_template_part('templates/entry-meta'); ?>
+          <div>
+         <?php 
+           $sub = get_post_meta( get_the_ID(), 'book_sub_heading', true );          
+          $pub = get_post_meta( get_the_ID(), 'publication_date', true );
+        $pub = new DateTime($pub);
+         //the_field ('book_sub_heading'); 
+           echo '<h3>' . $sub . '</h3>';
+         ?>
+         </div>
+         
+           <time><strong>Publication date:</strong> <?php echo $pub->format('j M Y');
+           //the_field ('publication_date'); ?></time> 
+       
+        </header>
+        <div class="buy uk-align-center uk-text-center">
+          <a href="<?php the_field ('purchase_link'); ?>" class="order uk-button uk-button-primary" target="_blank">Buy now</a>
+
+        </div>
+
+      </div>
+
+    </div>   <!-- End Grid --> 
     <div class="entry-content">
 
-     <div class="featured-image">
-     <?php the_post_thumbnail('full'); ?>
-     </div>
-
+    
 
  
-<a href="<?php the_field ('purchase_link'); ?>" class="buy-book btn" target="_blank">Buy now</a>
 
       <?php the_content(); ?>
      

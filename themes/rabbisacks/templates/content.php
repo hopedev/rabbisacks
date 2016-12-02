@@ -19,7 +19,7 @@
   		$type = "other";
   	}
   ?>
-    <h2 class="entry-title uk-article-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a><span class="uk-badge uk-badge-notification"><?php echo $type; ?></span></h2>
+    <h2 class="entry-title uk-article-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a><span class="uk-badge uk-badge-notification uk-align-right"><?php echo $type; ?></span></h2>
     <?php get_template_part('templates/entry-meta'); ?>
   </header>
   <div class="entry-summary">

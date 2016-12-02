@@ -16,6 +16,25 @@
 
 	/* medium Devices, Tablets */
 	@media only screen and (min-width : 768px){
+		#searchbox form {
+			padding: 3em;
+		}
+		.uk-navbar-brand {
+			margin-bottom: 0;
+			padding-left: 0;
+			height: 100%;
+			position: relative;
+			li{
+				float: left;
+
+			}
+			 .logo{ 
+
+			 	padding: 19px 26px;	
+			 	img {width:174px;}
+			  }
+			
+		}
 		.fullwidth{
 		   margin-left: calc(-50vw + 50%) !important;
 		   margin-right: calc(-50vw + 50%) !important;  
@@ -75,8 +94,16 @@
 			    }
 
 			}
-
-	
+				// Archive pages
+			.archive {
+				.thecontent {
+			       padding-left: 4em;
+			       padding-right: 4em;
+			   }
+			 }
+			 .pagetop_menu .container--inner {
+		        padding: 0 2em;
+		    }
 	 }
 
 	

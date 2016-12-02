@@ -1,29 +1,28 @@
 <div id="thecontent">
 
- <?php // Covenant & Conversation
+
+
+<?php // Covenant & Conversation
 
 		$args = array( 'posts_per_page' => 3,  'category' => 852 ); // Covenant & Conversation cat id= 852
 
 		$persposts = get_posts( $args );
-		 // print_r($myposts[0]->ID);
-		 // foreach ( $myposts as $post ) : setup_postdata( $post ); ?>		 
-			 	<!-- <li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>  -->
-		<?php
-		 // endforeach; 
-	 ?>
-		<div class="uk-grid feature-primary">
-			<div class="uk-width-medium-2-3 uk-push-1-3"> <!-- Main Post, displays on Right side on desktop -->
+ ?>		 
+			 	
+		<div class="uk-grid uk-grid-collapse">
+			<div class="uk-width-medium-2-3 uk-push-1-3 feature-primary"> <!-- Main Post, displays on Right side on desktop -->
 				<div class="uk-panel uk-panel-box">
 
 				<?php 
 					 $post = $persposts[0];
 					setup_postdata( $post ); 
 					?>
-					
-					<div class=""><?php the_post_thumbnail('medium'); ?></div>
-					   
-					<h2 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-					<div class=""><?php the_excerpt(); ?></div>
+					<?php if ( has_post_thumbnail() ) { ?>
+						<div class="uk-panel-teaser uk-align-center"><?php the_post_thumbnail('large-thumb', array( 'class' => 'uk-align-center' )); ?></div>
+					 <?php } ?>  
+					 <div class="uk-panel-body">
+					<h3 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+					<?php the_excerpt(); ?></div>
 				<?php
 				 // endforeach; 
 			 ?>
@@ -40,7 +39,7 @@
 						 $post = $persposts[1];
 						setup_postdata( $post ); 
 						?>
-						<div class=""><?php the_post_thumbnail('thumbnail'); ?></div>
+						<div class="uk-panel-teaser uk-align-center"><?php the_post_thumbnail('thumbnail', array( 'class' => 'uk-align-center' )); ?></div>
 						<h3 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 						<div class=""><?php the_excerpt(); ?></div>
 					<?php
@@ -55,7 +54,7 @@
 						 $post = $persposts[2];
 						setup_postdata( $post ); 
 						?>
-						<div class=""><?php the_post_thumbnail('thumbnail'); ?></div>
+						<div class="uk-panel-teaser uk-align-center"><?php the_post_thumbnail('thumbnail', array( 'class' => 'uk-align-center' )); ?></div>
 						<h3 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 						<div class=""><?php the_excerpt(); ?></div>
 					<?php
@@ -74,7 +73,6 @@
 	<?php
 		wp_reset_postdata();
 	  ?>
-
 
 
 </div>

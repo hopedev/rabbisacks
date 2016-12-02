@@ -3,6 +3,12 @@
 /////////////
 // MIXINS //
 ////////////
+@mixin box-shadow($top: 3px, $left: 3px, $blur: 4px, $colour: $text-dark, $inset:"") {
+  -webkit-box-shadow: #{$inset} $top $left $blur $colour;
+  -moz-box-shadow:  #{$inset} $top $left $blur $colour;
+  box-shadow: #{$inset} $top $left $blur $colour;
+}
+
 
 /// Slightly lighten a color
 /// @access public
@@ -26,7 +32,7 @@ $border-line-width: 1px;
 
 
 // Colors
-$brand-primary:         #6c086b; // Red
+$brand-primary:         #662483; // purple
 $brand-grey: 	#F3F3F3;
 $dark-grey: 	#949494;
 $text-dark: 	#444;
@@ -36,6 +42,9 @@ $navbar-background: #fff;
 $brand-tint: tint($brand-primary, 90%);
 
 // Set UIkit variables
+
+// $utility-container-large-max-width: 1100px;
+
 $base-em-color: #777;
 $base-body-color: #777;
 $dark-body-color: $text-dark;
@@ -44,7 +53,15 @@ $base-link-color: $brand-primary;
 $navbar-nav-font-family: "niveau-grotesk",sans-serif;
 $navbar-nav-hover-background: transparent;
 $navbar-nav-hover-color:$brand-primary;
-$navbar-nav-height: 65px;
+$navbar-nav-active-background: none;
+$navbar-nav-active-color: $brand-primary;
+$navbar-nav-onclick-background: none;
+$navbar-nav-onclick-color: $text-dark;
+$navbar-nav-height: 102px;
+$social-nav-height: 30px;
+
+$base-h1-font-size: 15px;
+$base-h1-line-height: 1.5;
 
 $offcanvas-bar-width: auto;
 $nav-offcanvas-hover-background: none;
@@ -55,6 +72,13 @@ $overlay-panel-background: rgba(0,0,0,0.3);
 
 $base-link-hover-color: darken( $brand-primary, 10% );
 $base-link-hover-text-decoration: none;
+
+$button-primary-background: #fff;
+$button-primary-color: $brand-primary;
+$button-primary-hover-background: $brand-primary;
+$button-primary-hover-color: #fff;
+$button-primary-active-background: $brand-primary;
+$button-primary-active-color: #fff;
 
 // $base-blockquote-padding-left: 0;
 // $base-blockquote-border-width: 0;

@@ -8,18 +8,29 @@
 	color: white;
 }
 .uk-navbar-brand {
-	// 
-}
-.brand img{ 
-	&.logo{	width:174px;background: $brand-primary;
-	}
-	&.logo-office{	width:261px;}
-	height: auto;
+	margin-bottom: 0;
+	padding-left: 0;
+	height: 100%;
+	position: relative;
+	li{
+		float: left;
 
+	}
+	 .logo{ 
+	 	background: $brand-primary;	
+	 	padding: 13px 14px;
+	 	img {width:130px;}
+	  }
+	.logo-office {	
+		    padding: 39px 26px;
+		img {
+			width:261px;	 	
+		}
+	}
 }
 .nav-social{
 	.nav>li>a, .uk-navbar-nav>li>a{
-			height:40px;
+			height:$social-nav-height;
 	}
 
 
@@ -30,12 +41,29 @@
 	{
 		color: #fff;
 		font-size: 100%;
-		height:40px;
+		line-height: 2;
+		height:$social-nav-height;
+
 	}
 
 }
+.nav-always{
+	    margin: 0;
+	    padding: 0;
+	    list-style: none;
+	    li{
+		    float: left;
+		    position: relative;
+		    a{
+		    	height: $navbar-nav-height;
+				padding: 0 15px;
+				line-height: $navbar-nav-height;
+				color: $text-dark;
+		    }
+	    }
+}
 
-#sidemenu {
+ #sidemenu {
 	ul{
 		padding-top: 4em;	
 			li{
