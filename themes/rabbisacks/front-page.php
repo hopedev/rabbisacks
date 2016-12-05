@@ -5,37 +5,31 @@ Header image code is in header.php due to sticky
 
  */ 
  ?>
- 
 
   <?php while (have_posts()) : the_post(); ?>
 
-
-
 	<div class="container uk-container uk-container-center">
-  
+
 	  <?php get_template_part('templates/page', 'header'); ?>
 
 
-	<div class="page-sector perspectives"><h4 class="page-sector-title header-line">Perspectives</h4>
+	<div class="page-sector perspectives uk-block">
 
-	  <?php // Covenant & Conversation
-
-		$args = array( 'posts_per_page' => 3,  'category' => 852 ); // Covenant & Conversation cat id= 852
-
-		$persposts = get_posts( $args );
- ?>		 
+		<h4 class="page-sector-title header-line">Perspectives</h4>
+		  <?php // Covenant & Conversation
+			$args = array( 'posts_per_page' => 3,  'category' => 852 ); // Covenant & Conversation cat id= 852
+			$persposts = get_posts( $args );
+	 ?>		 
 			 	
-
 		<div class="uk-grid uk-grid-collapse">
 			<div class="uk-width-medium-2-3 uk-push-1-3 feature-primary"> <!-- Main Post, displays on Right side on desktop -->
-				<div class="uk-panel uk-panel-box">
-
+				<div class="uk-panel uk-panel-box uk-panel-space">
 				<?php 
 					 $post = $persposts[0];
 					setup_postdata( $post ); 
 					?>
 					<?php if ( has_post_thumbnail() ) { ?>
-						<div class="uk-panel-teaser uk-align-center"><?php the_post_thumbnail('large-thumb', array( 'class' => 'uk-align-center' )); ?></div>
+						<div class="uk-align-center"><?php the_post_thumbnail('large-thumb', array( 'class' => 'uk-align-center' )); ?></div>
 					 <?php } ?>  
 					 <div class="uk-panel-body">
 					<h3 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
@@ -49,42 +43,26 @@ Header image code is in header.php due to sticky
 			<div class="uk-width-medium-1-3 uk-pull-2-3">
 
 				<div class="uk-grid feature-secondary feature-left">
+				<?php for ($i = 1; $i <= 2; $i++) { ?>
 		            <div class="uk-width-1-1">
-			            <div class="uk-panel uk-panel-box">
+			            <div class="uk-panel uk-panel-box uk-panel-space">
 
 					<?php 
-						 $post = $persposts[1];
+						 $post = $persposts[$i];
 						setup_postdata( $post ); 
 						?>
-						<div class="uk-panel-teaser uk-align-center"><?php the_post_thumbnail('thumbnail', array( 'class' => 'uk-align-center' )); ?></div>
+						<div class="uk-align-center"><?php the_post_thumbnail('large-thumb', array( 'class' => 'uk-align-center' )); ?></div>
 						<h3 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 						<div class=""><?php the_excerpt(); ?></div>
-					<?php
-					 // endforeach; 
-				 ?>
+					
 					 </div>
+					 <?php
+						 } 
+				 ?>
 				 </div>
-		            <div class="uk-width-1-1">
-		            	 <div class="uk-panel uk-panel-box">
-
-					<?php 
-						 $post = $persposts[2];
-						setup_postdata( $post ); 
-						?>
-						<div class="uk-panel-teaser uk-align-center"><?php the_post_thumbnail('thumbnail', array( 'class' => 'uk-align-center' )); ?></div>
-						<h3 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-						<div class=""><?php the_excerpt(); ?></div>
-					<?php
-					 // endforeach; 
-				 ?>
-					 </div>
-					</div>
-		        </div>
-				
-			</div>
-		</div>
-
-
+</div>
+	</div>	
+</div>	
 
 
 	<?php
@@ -93,7 +71,7 @@ Header image code is in header.php due to sticky
 
 	</div> <!-- End Perspectives -->
 
-	<div class="page-sector"><h4 class="page-sector-title header-line">Commentary</h4>
+	<div class="page-sector uk-block"><h4 class="page-sector-title header-line">Commentary</h4>
 
 		<div class="uk-grid feature-trio">
 
@@ -114,8 +92,8 @@ Header image code is in header.php due to sticky
 
 		 foreach ( $postslist as $post ) : setup_postdata( $post ); ?>		
 		 	<div class="uk-width-medium-1-3"> 
-				<div class="uk-panel uk-panel-box"> 
-				 	<div class="uk-panel-teaser uk-align-center"><?php the_post_thumbnail('thumbnail', array( 'class' => 'uk-align-center' )); ?></div>
+				<div class="uk-panel uk-panel-box uk-panel-space">
+				 	<div class="uk-align-center"><?php the_post_thumbnail('large-thumb', array( 'class' => 'uk-align-center' )); ?></div>
 						<h3 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 						<div class=""><?php the_excerpt(); ?></div>
 			 	</div>
@@ -128,7 +106,7 @@ Header image code is in header.php due to sticky
 	 	</div>
 	</div> <!-- End Commentary -->
 
-	<div class="page-sector selected">
+	<div class="page-sector uk-block selected">
 	
 	<?php
 	$featured = get_post_meta( get_the_ID(), 'featured_post', true );
@@ -173,7 +151,7 @@ Header image code is in header.php due to sticky
 ?>
 
 
-	<div class="page-sector"> 
+	<div class="page-sector uk-block"> 
 
 		<div class="uk-grid feature-double">
 		 	<div class="uk-width-medium-1-3"> 
@@ -193,9 +171,10 @@ Header image code is in header.php due to sticky
 
 			        <li>
 			        	<div class="uk-panel uk-panel-box"> 
-						 	<div class=""><?php the_post_thumbnail('book-thumb'); ?></div>
-								<h4 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
-								<!-- <div class=""><?php the_excerpt(); ?></div> -->
+						 	<div class="uk-align-center"><?php the_post_thumbnail('book-home', array( 'class' => 'uk-align-center' )); ?></div>
+								<h3 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+								<div class=""><?php the_excerpt(); ?></div>
+								<div class="uk-align-center uk-text-center buy"><a href="<?php the_field ('purchase_link'); ?>" class="order uk-button uk-button-primary" target="_blank">Buy now</a></div>
 					 	</div>
 			        </li>
 				      
@@ -245,7 +224,7 @@ Header image code is in header.php due to sticky
 						
 					  
 				 <div class="uk-panel-body">
-						<h4 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
+						<h3 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 						<?php the_excerpt(); ?></div>
 
 				    <?php endforeach; ?>
@@ -256,7 +235,7 @@ Header image code is in header.php due to sticky
 
 	</div>
 
-	<div class="page-sector quotes"><h4 class="page-sector-title header-line">Quotes</h4>
+	<div class="page-sector quotes uk-block"><h4 class="page-sector-title header-line">Quotes</h4>
 <?php 
 		if ( false === ( $quotes = get_transient( 'rand_quote' ) ) ) {
 		  // It wasn't there, so regenerate the data and save the transient

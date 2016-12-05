@@ -25,13 +25,6 @@
 		  }
 		  ?>
 
-		 <?php 
-		 if ( has_post_thumbnail() ) { 
-			 if(!is_page(array('books-homepage', 'writing-homepage'))){
-			 	the_post_thumbnail('full'); 
-			 }
-		 }
-		 ?>
 
 
 	</div>

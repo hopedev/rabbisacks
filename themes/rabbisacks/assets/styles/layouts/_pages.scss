@@ -45,11 +45,17 @@
             }
         }
       }
+
+      .uk-slidenav-position .uk-slidenav {top: 30%;}
+      .buy{padding: 2em auto;}
 }
-.home .page-sector:first-of-type, 
+
+
+.page-sector, 
 .search .thecontent {
            margin-top: 3em;
     }
+
 
 // on homepage & landing pages
 .header-line { 
@@ -78,15 +84,18 @@
     margin-right: auto;
 }
 .feature-primary .uk-panel-box {
-    max-width: 636px;
+//    max-width: 636px;
     .uk-panel-body{
-    max-width: 475px;
+  //  max-width: 475px;
     text-align: center;
     margin: 0 auto;
     }
+    img{
+        width: 100%;
+    }
 }
 .feature-secondary .uk-panel-box, .feature-trio .uk-panel-box {
-    max-width: 300px;
+    //max-width: 300px;
 }
 
 .page-sector.selected .page-sector-title {
@@ -102,7 +111,7 @@
 // Cov & Conv homepage
 .pagetop_menu {
     background: $brand-tint;
-        h3{
+        h4{
             padding-top: 10px;
             padding-bottom: 10px; 
         }

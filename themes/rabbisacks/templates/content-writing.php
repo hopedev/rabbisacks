@@ -13,7 +13,7 @@
 	?>		 
 		<div class="uk-grid  uk-grid-collapse">
 			<div class="uk-width-medium-2-3 feature-primary"> <!-- Main Post, displays on Right side on desktop -->
-				<div class="uk-panel uk-panel-box">
+				<div class="uk-panel uk-panel-box uk-panel-space">
 
 				<?php 
 					 $post = $textposts[0];
@@ -21,7 +21,8 @@
 					?>
 					
 					<?php if ( has_post_thumbnail() ) { ?>
-						<div class="uk-panel-teaser uk-align-center books-homepage featured-image"><?php the_post_thumbnail('medium', array( 'class' => 'uk-align-center' )); ?></div>
+						<div class="uk-align-center"><?php the_post_thumbnail('large-thumb', array( 'class' => 'uk-align-center' )); ?></div>
+					</div>
 										<?php
 				}
 			 ?>
@@ -39,13 +40,13 @@
 
 				<div class="uk-grid uk-grid-collapse">
 		            <div class="uk-width-1-1">
-			            <div class="uk-panel uk-panel-box">
+			            <div class="uk-panel uk-panel-box uk-panel-space">
 
 					<?php 
 						 $post = $textposts[1];
 						setup_postdata( $post ); 
 						?>
-						<div class=""><?php the_post_thumbnail('medium', array( 'class' => 'uk-align-center' )); ?></div>
+						<div class="uk-align-center"><?php the_post_thumbnail('large-thumb', array( 'class' => 'uk-align-center' )); ?></div>
 						<h3 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 						<div class=""><?php the_excerpt(); ?></div>
 					<?php

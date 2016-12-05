@@ -126,15 +126,17 @@ class Simple_Nav_Walker extends Walker_Nav_Menu {
     $output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
   }
   function end_el(&$output, $item, $depth=0, $args=array()) { 
-    if ($depth === 0) {
+    if (($depth === 0)) {
       $output .= "</div>\n";
     } 
   }
-
-
-
 }
 
+ function adjust_image_sizes_attr( $sizes, $size ) {
+   $sizes = '(max-width: 709px) 85vw, (max-width: 909px) 67vw, (max-width: 1362px) 62vw, 840px';
+   return $sizes;
+}
+add_filter( 'wp_calculate_image_sizes', 'adjust_image_sizes_attr', 10 , 2 );
 
 
 

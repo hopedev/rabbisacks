@@ -37,7 +37,7 @@ function setup() {
   // http://codex.wordpress.org/Function_Reference/set_post_thumbnail_size
   // http://codex.wordpress.org/Function_Reference/add_image_size
   add_theme_support('post-thumbnails');
-  add_image_size( 'large-thumb', 636, 420, true );
+  add_image_size( 'large-thumb', 693, 457, true );
   add_image_size( 'large-video-thumb', 636, 460, true ); 
   add_image_size( 'book-thumb', 271, 180, false ); 
 //     add_image_size( 'home-banner-large', 1800, 460, true ); 

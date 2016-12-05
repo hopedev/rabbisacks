@@ -70,6 +70,19 @@ $nav-offcanvas-active-background:none;
 $overlay-icon: "\f01d"; //play icon
 $overlay-panel-background: rgba(0,0,0,0.3);
 
+// $slidenav-contrast-hover-color: hsla(100%,0%,100%,.7);
+.uk-slidenav-contrast.uk-slidenav-previous,     
+.uk-slidenav-contrast.uk-slidenav-next {   
+    background-color: rgba(255,255,255,0.4);    
+    color: rgba(0,0,0,0.4);    
+}
+.uk-slidenav-contrast.uk-slidenav-previous:hover,
+.uk-slidenav-contrast.uk-slidenav-next:hover {   
+    background-color: rgba(255,255,255,0.6);    
+    color: rgba(0,0,0,0.4);  
+}
+
+
 $base-link-hover-color: darken( $brand-primary, 10% );
 $base-link-hover-text-decoration: none;
 
@@ -89,6 +102,8 @@ $button-primary-active-color: #fff;
 
 $panel-box-background: none;
 //$dotnav-background: $dark-grey;
+$dotnav-width: 10px;
+$dotnav-height: 10px;
 $dotnav-background:                              rgba(128,128,128,0.9) !default;
 
 $dotnav-hover-background:                        rgba(50,50,50,0.4) !default;

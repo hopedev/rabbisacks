@@ -48,7 +48,7 @@
                  <img class="uk-hidden-small" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/logo-sig@2x.png" />
                  </a>
                  </li>
-                 <li class="logo-office uk-hidden-small">
+                 <li class="logo-office uk-visible-large">
                  <img   src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/logo-office@2x.png" />
                  </li>
             </ul>
@@ -123,10 +123,10 @@
       <div class="pagetop_menu">
         <div class="container uk-container uk-container-center uk-clearfix"> 
            <div class="">
-              <h3 class="uk-text-center" data-uk-toggle="{target:'#parshotmenu, .toggleicon'}">
+              <h4 class="uk-text-center" data-uk-toggle="{target:'#parshotmenu, .toggleicon'}">
               <i class="uk-icon-caret-right toggleicon" aria-hidden="false"></i>
               <i class="uk-icon-caret-down toggleicon uk-hidden" aria-hidden="true"></i>
-                click to search by parsha</h3>
+                click to search by parsha</h4>
               <div id="parshotmenu" class="uk-block pagemenu uk-hidden uk-clearfix">
               <div class="parshot-menu uk-grid uk-grid-width-1-2 uk-grid-width-medium-1-5" data-uk-grid-margin>
                 <?php
@@ -137,10 +137,10 @@
       <div class="pagetop_menu">  
         <div class="container uk-container uk-container-center uk-clearfix"> 
           <div class="">
-            <h3 class="uk-text-center"><a data-uk-toggle="{target:'#categorymenu, .toggleicon'}">
+            <h4 class="uk-text-center"><a data-uk-toggle="{target:'#categorymenu, .toggleicon'}">
               <i class="uk-icon-caret-right toggleicon" aria-hidden="false"></i>
               <i class="uk-icon-caret-down toggleicon uk-hidden" aria-hidden="true"></i>
-            click to search by category</a></h3>
+            click to search by category</a></h4>
             <div id="categorymenu" class="uk-block pagemenu uk-hidden uk-clearfix">
             <ul class="uk-grid uk-grid-width-1-2 uk-grid-width-medium-1-5" >
             <?php

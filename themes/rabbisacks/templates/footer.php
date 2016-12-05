@@ -1,4 +1,13 @@
-<footer class="content-info">
+
+		 <?php 
+		 if ( has_post_thumbnail() ) { 
+			 if(!is_page(array('books-homepage', 'writing-homepage'))){
+			 	the_post_thumbnail('full'); 
+			 }
+		 }
+		 ?>
+
+		 <footer class="content-info">
   <div class="container">
   <div class="uk-grid uk-grid-width-1-1 uk-grid-width-medium-1-4">
     <?php dynamic_sidebar('sidebar-footer'); ?>

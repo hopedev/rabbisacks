@@ -19,22 +19,7 @@
 		#searchbox form {
 			padding: 3em;
 		}
-		.uk-navbar-brand {
-			margin-bottom: 0;
-			padding-left: 0;
-			height: 100%;
-			position: relative;
-			li{
-				float: left;
-
-			}
-			 .logo{ 
-
-			 	padding: 19px 26px;	
-			 	img {width:174px;}
-			  }
-			
-		}
+		
 		.fullwidth{
 		   margin-left: calc(-50vw + 50%) !important;
 		   margin-right: calc(-50vw + 50%) !important;  
@@ -50,9 +35,10 @@
 
 		  #sidemenu .menu-main-navigation-container .uk-nav li a {font-size: 2em;}
 
-			.page-sector > .uk-grid { padding: 3em 0;}			
-
-
+		//	.page-sector > .uk-grid { padding: 3em 0;}			
+		
+		.page-sector .uk-panel{ padding-top: 0;}
+		.page-sector-title {padding-bottom: 2em;}
 
 		  .feature-left{
 			     	border-width: 0;
@@ -113,11 +99,27 @@
 	@media only screen and (min-width : 992px){ 
 
 	}
+	@media only screen and (min-width : 1024px){ 
+		.logo-office{ display:none;}
+	}
+
  
 	/* XLarge Devices, Wide Screens */
-	// @media only screen and (min-width : 1200px){ 
-	
+	@media only screen and (min-width : 1200px){ 
+		.logo-office{ display:block;}
+			.uk-navbar-brand {
+			margin-bottom: 0;
+			padding-left: 0;
+			height: 100%;
+			position: relative;
+			li{float: left;}
+			 .logo{ 
+			 	padding: 19px 26px;	
+			 	img {width:174px;}
+			  }
+			
+		}
 
-	// }
+	}
 	
 	
