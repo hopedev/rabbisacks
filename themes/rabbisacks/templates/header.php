@@ -41,8 +41,6 @@
       
 
       <nav class="uk-navbar">
-         <div class="container uk-container uk-container-center">
-
             <ul class="uk-navbar-brand">
             <li class="logo">
                  <a class="brand " href="<?= esc_url(home_url('/')); ?>">
@@ -54,6 +52,11 @@
                  <img   src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/logo-office@2x.png" />
                  </li>
             </ul>
+
+
+         <div class="container uk-container uk-container-center">
+
+
          
               <div class="nav-primary uk-navbar-flip">
                 <ul class="nav-always uk-navbar-flip">
@@ -119,12 +122,12 @@
 <?php if (is_page('covenant-conversation-homepage')){ ?>
       <div class="pagetop_menu">
         <div class="container uk-container uk-container-center uk-clearfix"> 
-           <div class="container--inner">
+           <div class="">
               <h3 class="uk-text-center" data-uk-toggle="{target:'#parshotmenu, .toggleicon'}">
               <i class="uk-icon-caret-right toggleicon" aria-hidden="false"></i>
               <i class="uk-icon-caret-down toggleicon uk-hidden" aria-hidden="true"></i>
                 click to search by parsha</h3>
-              <div id="parshotmenu" class="pagemenu uk-hidden uk-clearfix">
+              <div id="parshotmenu" class="uk-block pagemenu uk-hidden uk-clearfix">
               <div class="parshot-menu uk-grid uk-grid-width-1-2 uk-grid-width-medium-1-5" data-uk-grid-margin>
                 <?php
                 wp_nav_menu(array('items_wrap'=> '%3$s', 'walker' => new Simple_Nav_Walker(), 'container'=> false ,'menu' => 'Parshot', 'menu_class' => '' ));
@@ -133,12 +136,12 @@
   }   else if (is_page('writing-homepage')){ ?>
       <div class="pagetop_menu">  
         <div class="container uk-container uk-container-center uk-clearfix"> 
-          <div class="container--inner">
+          <div class="">
             <h3 class="uk-text-center"><a data-uk-toggle="{target:'#categorymenu, .toggleicon'}">
               <i class="uk-icon-caret-right toggleicon" aria-hidden="false"></i>
               <i class="uk-icon-caret-down toggleicon uk-hidden" aria-hidden="true"></i>
             click to search by category</a></h3>
-            <div id="categorymenu" class="pagemenu uk-hidden uk-clearfix">
+            <div id="categorymenu" class="uk-block pagemenu uk-hidden uk-clearfix">
             <ul class="uk-grid uk-grid-width-1-2 uk-grid-width-medium-1-5" >
             <?php
             wp_list_categories(array(

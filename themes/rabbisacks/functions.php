@@ -68,7 +68,7 @@ return $page_id;
 }
 
 
-// In your functions.php
+// Prints out snap down Parshot menu
 class Simple_Nav_Walker extends Walker_Nav_Menu {
 
   /**
@@ -95,7 +95,16 @@ class Simple_Nav_Walker extends Walker_Nav_Menu {
     $class_names = $class_names ? ' class="' . esc_attr( $class_names ) . '"' : '';
     $id = apply_filters( 'nav_menu_item_id', 'menu-item-'. $item->ID, $item, $args );
     $id = $id ? ' id="' . esc_attr( $id ) . '"' : '';
+
+
+    if ( ($depth === 0)) {
+    $output .= '<div>' . $indent . '<li' . $value . $class_names .'>';
+    } elseif ($depth > 0) {
     $output .= $indent . '<li' . $value . $class_names .'>';
+    }
+
+    //$output .= $indent . '<li' . $value . $class_names .'>';
+
     $atts = array();
     $atts['title']  = ! empty( $item->attr_title ) ? $item->attr_title : '';
     $atts['target'] = ! empty( $item->target )     ? $item->target     : '';
@@ -116,6 +125,14 @@ class Simple_Nav_Walker extends Walker_Nav_Menu {
     $item_output .= $args->after;
     $output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
   }
+  function end_el(&$output, $item, $depth=0, $args=array()) { 
+    if ($depth === 0) {
+      $output .= "</div>\n";
+    } 
+  }
+
+
+
 }
 
 

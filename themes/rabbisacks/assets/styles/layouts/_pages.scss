@@ -100,17 +100,16 @@
 
 
 // Cov & Conv homepage
-.pagetop_menu .container--inner {
+.pagetop_menu {
     background: $brand-tint;
-        padding: 0 1em;
         h3{
             padding-top: 10px;
             padding-bottom: 10px; 
         }
+
 }
 
 #parshotmenu {
-    // display: none;
     ul{ margin-top: 0;}
 }
 
