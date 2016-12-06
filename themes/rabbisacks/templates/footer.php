@@ -1,8 +1,14 @@
 
 		 <?php 
 		 if ( has_post_thumbnail() ) { 
-			 if(!is_page(array('books-homepage', 'writing-homepage'))){
-			 	the_post_thumbnail('full'); 
+			 if(is_page(array('covenant-conversation-homepage'))){
+			 	// the_post_thumbnail('full'); 
+			 	$footimg = get_post_meta( get_the_ID(), 'footer_image', true );
+			 	if($footimg){
+			 		$footimgfull =  wp_get_attachment_image( $footimg, 'full' ) ;
+			 		echo $footimgfull;
+    
+			 	}
 			 }
 		 }
 		 ?>

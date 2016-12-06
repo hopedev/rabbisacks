@@ -3,6 +3,7 @@
 
 
  <?php // Covenant & Conversation
+ 
 			$args = array( 'posts_per_page' => 3,  'category' => 852 ); // Covenant & Conversation cat id= 852
 			$persposts = get_posts( $args );
 	 ?>		 

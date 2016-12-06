@@ -140,53 +140,26 @@ add_filter( 'wp_calculate_image_sizes', 'adjust_image_sizes_attr', 10 , 2 );
 
 
 
-
-add_action( 'init', 'create_post_types' );
-
-function create_post_types() {
-
-  
-  //////////////////////////////////////////
-  // Register posts for Social Tile plugin
-  //////////////////////////////////////////
-  register_post_type( 'twitter',
-    array(
-      'labels' => array(
-        'name' => __( 'Twitter' ),
-        'singular_name' => __( 'Twitter' )
-      ),
-    'public' => true,
-    'has_archive' => true,
-    'supports' => array( 'title'),
-    'exclude_from_search' => true
-    )
-  );
-  // register_post_type( 'instagram',
-  //   array(
-  //     'labels' => array(
-  //       'name' => __( 'Instagram' ),
-  //       'singular_name' => __( 'Instagram' )
-  //     ),
-  //   'public' => true,
-  //   'has_archive' => true,
-  //   'supports' => array( 'title'),
-  //   'exclude_from_search' => true
-  //   )
-  // );
-  register_post_type( 'facebook',
-    array(
-      'labels' => array(
-        'name' => __( 'Facebook' ),
-        'singular_name' => __( 'Facebook' )
-      ),
-    'public' => true,
-    'has_archive' => true,
-    'supports' => array( 'title'),
-    'exclude_from_search' => true
-    )
-  );
-
-  
-
-  
-}
+  function paginate() {
+    global $wp_query, $wp_rewrite;
+    $wp_query->query_vars['paged'] > 1 ? $current = $wp_query->query_vars['paged'] : $current = 1;
+    
+    $pagination = array(
+      'base' => @add_query_arg('page','%#%'),
+      'format' => '',
+      'total' => $wp_query->max_num_pages,
+      'current' => $current,
+      'show_all' => true,
+      'type' => 'list',
+      'next_text' => '&raquo;',
+      'prev_text' => '&laquo;'
+      );
+    
+    if( $wp_rewrite->using_permalinks() )
+      $pagination['base'] = user_trailingslashit( trailingslashit( remove_query_arg( 's', get_pagenum_link( 1 ) ) ) . 'page/%#%/', 'paged' );
+    
+    if( !empty($wp_query->query_vars['s']) )
+      $pagination['add_args'] = array( 's' => get_query_var( 's' ) );
+    
+    echo paginate_links( $pagination );
+}  

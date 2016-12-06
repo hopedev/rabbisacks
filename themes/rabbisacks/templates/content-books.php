@@ -1,4 +1,4 @@
-<div id="thecontent">
+<div id="thecontent" class="books-home">
 
  <?php // Covenant & Conversation
 
@@ -15,7 +15,7 @@
 					?>
 					
 						<?php if ( has_post_thumbnail() ) { ?>
-						<div class="uk-panel-teaser uk-align-center books-homepage featured-image"><?php the_post_thumbnail('medium', array( 'class' => 'uk-align-center' )); ?></div>
+						<div class="uk-align-center books-homepage featured-image"><?php the_post_thumbnail('medium', array( 'class' => 'uk-align-center' )); ?></div>
 					 <?php } ?>  
 					 <div class="uk-panel-body">
 					<h3 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
@@ -40,14 +40,13 @@
 					<?php $post = $persposts[$x]; setup_postdata( $post ); ?>
 		
 						<?php if ( has_post_thumbnail() ) { ?>
-						<div class="uk-panel-teaser uk-align-center books-homepage featured-image"><?php the_post_thumbnail('thumbnail', array( 'class' => 'uk-align-center' )); ?></div>
+						<div class="uk-align-center books-homepage featured-image"><?php the_post_thumbnail('book-thumb', array( 'class' => 'uk-align-center' )); ?></div>
 						 <?php } ?> 
 						  <div class="uk-panel-body"> 
 						<h3 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 						<div class=""><?php the_excerpt(); ?></div>
-						<div class="uk-align-center"><a href="<?php the_field ('purchase_link'); ?>" class="order uk-button uk-button-primary" target="_blank">Buy now</a></div>
+						<div class="uk-align-center uk-text-center buy"><a href="<?php the_field ('purchase_link'); ?>" class="order uk-button uk-button-primary" target="_blank">Buy now</a></div>
 			 	</div>
-
 
 					 </div>
 				 </div>
@@ -76,22 +75,23 @@
 		 <div class="uk-slidenav-position">
 		    <ul class="uk-grid uk-slideset bookset">
 				    <?php 
-				    $args = array(
-				    	 'posts_per_page' => -1,
+				    $args2 = array(
+				    	 'posts_per_page' => 500,
+						'offset' => 3,
 						'post_type' => 'books'
 					);
-					$postslist = get_posts( $args );
+					$postslist = get_posts( $args2 );
 
 					 foreach ( $postslist as $post ) : setup_postdata( $post ); ?>	
 
 			        <li>
 			        	<div class="uk-panel uk-panel-box"> 
-						 	<div class=""><?php the_post_thumbnail('thumbnail'); ?></div>
+						 	<div class="uk-align-center"><?php the_post_thumbnail('book-thumb', array( 'class' => 'uk-align-center' )); ?></div>
 								<h4 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
 								<div class=""><?php the_excerpt(); ?></div>
 								
 					 	</div>
-					 	<div class="uk-align-center"><a href="<?php the_field ('purchase_link'); ?>" class="order uk-button uk-button-primary" target="_blank">Buy now</a></div>
+					 	<div class="uk-align-center uk-text-center buy"><a href="<?php the_field ('purchase_link'); ?>" class="order uk-button uk-button-primary" target="_blank">Buy now</a></div>
 			        </li>
 				      
 				      <?php endforeach; ?>

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=GFS+Didot');
+// @import url('https://fonts.googleapis.com/css?family=GFS+Didot');
 
 /////////////
 // MIXINS //
@@ -29,6 +29,9 @@ $spacer: 1rem; // setting a referenced bootstrap variable
 $icon-font-path:                                 "../fonts" !default;
 $border-line-width: 1px;
 
+$didot:'Didot W01 Display';
+// font-family:'Didot W01 Display';
+// font-family:'Didot W01';
 
 
 // Colors
@@ -57,7 +60,7 @@ $navbar-nav-active-background: none;
 $navbar-nav-active-color: $brand-primary;
 $navbar-nav-onclick-background: none;
 $navbar-nav-onclick-color: $text-dark;
-$navbar-nav-height: 102px;
+$navbar-nav-height: 90px;
 $social-nav-height: 30px;
 
 $base-h1-font-size: 15px;

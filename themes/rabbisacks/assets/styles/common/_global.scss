@@ -3,9 +3,11 @@ body, p, td,.header-line, .pagetop_menu h4{
   font-family: "niveau-grotesk",sans-serif;
 }
 .uk-article-title a {color:$brand-primary}
-h1, blockquote, blockquote p, .quote-large, .entry-title {
-  font-family: 'GFS Didot', serif;
+h1, blockquote, blockquote p, .quote-large, .entry-title, .quote-head {
+  font-family: $didot;
 }
+// font-family:'Didot W01 Display';
+// font-family:'Didot W01';
 
 // font sizes
 // .header-text {font-size: 50px;}
@@ -21,16 +23,11 @@ h3.entry-title {
 .container {
 	 @extend .uk-container;
 	 @extend .uk-container-center; 
-
     .main &{
       background: white;
     }  
-    .container--inner{
-      padding: 2em;
-    }
 }
-
-
+.main .uk-container{ padding: 0}
 // hide text for image replacement
 .hide-text {
     border: 0;

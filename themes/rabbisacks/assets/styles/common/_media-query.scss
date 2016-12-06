@@ -19,7 +19,7 @@
 		#searchbox form {
 			padding: 3em;
 		}
-		
+		.main .uk-container{ padding: 0 25px}
 		.fullwidth{
 		   margin-left: calc(-50vw + 50%) !important;
 		   margin-right: calc(-50vw + 50%) !important;  
@@ -39,7 +39,9 @@
 		
 		.page-sector .uk-panel{ padding-top: 0;}
 		.page-sector-title {padding-bottom: 2em;}
-
+		 .container--inner{
+		      padding: 2em;
+	    }
 		  .feature-left{
 			     	border-width: 0;
 					border-style: solid;
@@ -57,16 +59,14 @@
 	            min-height: 669px;
 			    }
 			    .headertext{
-			        //font-size: 50px;
-			        padding: 7.5em 4em 4em;
+				     padding-top: 0;  
 			    }
 				.header-text {    
-					//font-size: 50px;
 				    text-align: center;
 				}
 
 			}
-	
+			.books-home .feature-primary .uk-panel{ width: 50%;}
 
 			// font sizes
 			h3.entry-title {
@@ -114,8 +114,8 @@
 			position: relative;
 			li{float: left;}
 			 .logo{ 
-			 	padding: 19px 26px;	
-			 	img {width:174px;}
+			 	padding: 21px ;
+			 	//img {width:174px;}
 			  }
 			
 		}

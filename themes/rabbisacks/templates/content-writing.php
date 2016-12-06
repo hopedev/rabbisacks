@@ -22,7 +22,7 @@
 					
 					<?php if ( has_post_thumbnail() ) { ?>
 						<div class="uk-align-center"><?php the_post_thumbnail('large-thumb', array( 'class' => 'uk-align-center' )); ?></div>
-					</div>
+					
 										<?php
 				}
 			 ?>

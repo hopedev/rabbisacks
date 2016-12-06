@@ -123,8 +123,10 @@ Header image code is in header.php due to sticky
 				$posts = get_posts( $args );
 				foreach ( $posts as $post ) : setup_postdata( $post ); ?>	
 
-					<div class="selected-bg" style="background:url(<?php the_post_thumbnail_url('full') ?>)  no-repeat center center; background-size:cover" >	
-	<h4 class="page-sector-title header-line"><?php the_title(); ?></h4>					 	
+					<div class="selected-bg uk-cover-background fullwidth" style="background-image:url(<?php the_post_thumbnail_url('full') ?>);" >	
+		<h4 class="page-sector-title header-line"><?php the_title(); ?></h4>					
+					 <img class="uk-invisible" src="<?php the_post_thumbnail_url('full') ?>" width="" height="" alt="">
+				 	
 						<div class="uk-panel uk-panel-box"> 
 						 	<div class="uk-align-center"><?php //the_post_thumbnail('large-video-thumb', array( 'class' => 'uk-align-center' )); ?></div>
 							 <div class="uk-panel-body">
@@ -258,7 +260,7 @@ Header image code is in header.php due to sticky
 		  //Now we store the array for one day.
 		  //Just change the last parameter for another timespan in seconds.
 		  $seconds_until_next_day = strtotime('tomorrow') - time();
-set_transient( 'rand_quote', $quotes, $seconds_until_next_day );
+			set_transient( 'rand_quote', $quotes, $seconds_until_next_day );
 		}	
 		  foreach ( $quotes as $post ) : setup_postdata( $post ); 
 		  			$quote = get_post_meta( get_the_ID(), 'quote_text', true );

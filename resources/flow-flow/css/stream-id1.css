@@ -1,5 +1,5 @@
-#ff-stream-1 .ff-header h1,#ff-stream-1 .ff-controls-wrapper > span:hover { color: rgb(154, 78, 141); }
-#ff-stream-1 .ff-controls-wrapper > span:hover { border-color: rgb(154, 78, 141) !important; }
+#ff-stream-1 .ff-header h1,#ff-stream-1 .ff-controls-wrapper > span:hover { color: #662483; }
+#ff-stream-1 .ff-controls-wrapper > span:hover { border-color: #662483 !important; }
 #ff-stream-1 .ff-header h2 { color: rgb(114, 112, 114); }
 #ff-stream-1 .ff-filter-holder .ff-filter,
 #ff-stream-1 .ff-filter-holder:before,
@@ -11,7 +11,7 @@
 #ff-stream-1 .ff-moderation-button,
 #ff-stream-1 .ff-loadmore-wrapper .ff-btn,
 #ff-stream-1 .ff-square:nth-child(1) {
-	background-color: rgb(154, 78, 141);
+	background-color: #662483;
 }
 #ff-stream-1 .ff-filter-holder .ff-search input {
 	border-color: rgb(205, 205, 205);
@@ -22,7 +22,14 @@
 #ff-stream-1, #ff-stream-1 .ff-popup,
 #ff-stream-1 .ff-search input,
 #ff-stream-1.ff-layout-compact .picture-item__inner {
-	background-color: transparent;
+	background-color: rgba(0, 0, 0, 0);
+}
+#ff-stream-1 .ff-search input {
+	background-color: rgb(205, 205, 205);
+}
+#ff-stream-1 .ff-search input,
+#ff-stream-1 .ff-filter-holder .ff-search:after {
+	color: #FFF;
 }
 #ff-stream-1 .ff-header h1, #ff-stream-1 .ff-header h2 {
 	text-align: center;
@@ -73,17 +80,17 @@
 	text-shadow: -1px 0 rgb(255, 255, 255), 0 1px rgb(255, 255, 255), 1px 0 rgb(255, 255, 255), 0 -1px rgb(255, 255, 255);
 }
 #ff-stream-1  a, #ff-stream-1-slideshow  a{
-	color: rgb(94, 159, 202);
+	color: #662483;
 }
 
 #ff-stream-1 h4, #ff-stream-1-slideshow h4,
 #ff-stream-1 .ff-name, #ff-stream-1-slideshow .ff-name {
-	color: rgb(154, 78, 141) !important;
+	color: #662483 !important;
 }
 #ff-stream-1 .ff-share-wrapper a:hover,
 #ff-stream-1 .ff-mob-link:hover,
 #ff-stream-1-slideshow .ff-share-wrapper a:hover {
-	background-color: rgb(154, 78, 141);
+	background-color: #662483;
 }
 #ff-stream-1 .ff-nickname,
 #ff-stream-1-slideshow .ff-nickname,

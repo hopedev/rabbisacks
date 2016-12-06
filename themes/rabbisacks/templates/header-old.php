@@ -42,8 +42,8 @@
             <ul class="uk-navbar-brand">
             <li class="logo">
                  <a class="brand " href="<?= esc_url(home_url('/')); ?>">
-                  <img class="uk-hidden-large" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/logo-sig-sm@2x.png" />                
-                 <img class="uk-visible-large" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/logo-sig@2x.png" />
+                  <img class="uk-visible-small" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/logo-sig-sm@2x.png" />                
+                 <img class="uk-hidden-small" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/logo-sig@2x.png" />
                  </a>
                  </li>
                  <li class="logo-office uk-visible-large">
@@ -73,36 +73,6 @@
 <!--  -->
 <!-- STICKY BG IMAGE ON HOMEPAGE -->
 <!--  -->
-<!-- Mobile homeheader  image and quote -->
-<?php if (is_front_page()){ 
-          // Get Header Quotes
-          $headquotes = get_post_meta( get_the_ID(), 'selected_quotes', true );     
-          if( $headquotes ) {
-                $i = rand(0,count($headquotes)-1);
-                $quoteID = ($headquotes[$i]);
-                $headquote = get_post_meta( $quoteID, 'quote_text', true );
-          }    
-
-
-          $banners_mb = get_post_meta( get_the_ID(), 'header_images_mb', true );
-          if( $banners_mb ) {
-            $i = rand(0,$banners_mb-1);
-             $img = (int) get_post_meta( get_the_ID(), 'header_images_mb_' . $i . '_image', true );
-               $banner_mb_url =  wp_get_attachment_image_src( $img, 'full' ) ;
-             }      
-          ?>
-  <div class="home-image home-image-mb uk-cover-background fullwidth uk-visible-small" data-uk-sticky="{top:93}" style="background-image:url(<?php echo $banner_mb_url[0] ?>)"> 
-      <img class="uk-invisible" src="<?php echo $banner_mb_url[0] ?>" width="" height="" alt="">
-      <div class="uk-position-cover">
-        <div class="headertext uk-container " >
-          <?php // Get random one of selected quotes        
-          if( $headquote ) {  echo '<h2 class="quote-head uk-text-center">' . $headquote . '</h2 class="quote-head">'; }     ?>
-          <h2 class="quote-att uk-text-center">Rabbi Lord Jonathan Sacks</h2>
-  </div>
-      </div>
-    </div>
-<?php  }   ?>
-<!-- Medium and up homeheader image and quote -->
 <?php if (is_front_page()){ ?>
       <?php 
       $banners = get_post_meta( get_the_ID(), 'header_images', true );
@@ -112,23 +82,24 @@
            $banner_url =  wp_get_attachment_image_src( $img, 'full' ) ;
          }      
       ?>
-  <div class="uk-hidden-small" data-uk-sticky="{top:98}"> 
-   
-     <div class="uk-cover-background uk-position-relative  test-bg uk-flex uk-flex-center uk-flex-middle" style="background-image:url(<?php echo $banner_url[0] ?>)">
-         <!--  <img class="uk-invisible" src="<?php echo $banner_url[0] ?>" width="" height="" alt="">  -->
-        <div class="headertext uk-container uk-heading-large" >
-        <div class="uk-grid"><div class="uk-width-1-2">
-          <?php // Get random one of selected quotes
-          $headquotes = get_post_meta( get_the_ID(), 'selected_quotes', true );     
-          if( $headquote ) {  echo $headquote; }      
-          ?>
-          <h2 class="quote-att">Rabbi Lord Jonathan Sacks</h2>
-          </div></div>
+
+  <div class="home-image uk-cover-background fullwidth" data-uk-sticky="{top:133}" style="background-image:url(<?php echo $banner_url[0] ?>)"> 
+      <img class="uk-invisible" src="" width="" height="" alt="">
+      <div class="uk-position-cover uk-flex uk-flex-center uk-flex-middle">
+        <div class="headertext uk-container uk-container-center uk-text-center uk-heading-large" >
+      <?php // Get random one of selected quotes
+      $headquotes = get_post_meta( get_the_ID(), 'selected_quotes', true );     
+      if( $headquotes ) {      
+            $i = rand(0,count($headquotes)-1);
+            $quoteID = ($headquotes[$i]);
+            $headquote = get_post_meta( $quoteID, 'quote_text', true );
+            echo $headquote;
+          }    
+      ?><h2 class="quote-att">Rabbi Lord Jonathan Sacks</h2>
         </div>
       </div>
     </div>
 <?php  }   ?>
-
 
 <!-- snap down menus -->
 <?php if (is_page('covenant-conversation-homepage')){ ?>
