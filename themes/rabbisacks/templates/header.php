@@ -91,7 +91,7 @@
                $banner_mb_url =  wp_get_attachment_image_src( $img, 'full' ) ;
              }      
           ?>
-  <div class="home-image home-image-mb uk-cover-background fullwidth uk-visible-small" data-uk-sticky="{top:93}" style="background-image:url(<?php echo $banner_mb_url[0] ?>)"> 
+  <div class="home-image home-image-mb uk-cover-background fullwidth uk-visible-small" data-uk-sticky="{top:103}" style="background-image:url(<?php echo $banner_mb_url[0] ?>)"> 
       <img class="uk-invisible" src="<?php echo $banner_mb_url[0] ?>" width="" height="" alt="">
       <div class="uk-position-cover">
         <div class="headertext uk-container " >
@@ -112,10 +112,9 @@
            $banner_url =  wp_get_attachment_image_src( $img, 'full' ) ;
          }      
       ?>
-  <div class="uk-hidden-small" data-uk-sticky="{top:98}"> 
-   
-     <div class="uk-cover-background uk-position-relative  test-bg uk-flex uk-flex-center uk-flex-middle" style="background-image:url(<?php echo $banner_url[0] ?>)">
-         <!--  <img class="uk-invisible" src="<?php echo $banner_url[0] ?>" width="" height="" alt="">  -->
+  <div class="home-image uk-cover-background fullwidth uk-hidden-small" data-uk-sticky="{top:98}" style="background-image:url(<?php echo $banner_url[0] ?>)"> 
+      <img class="uk-invisible" src="<?php echo $banner_url[0] ?>" width="" height="" alt="">
+      <div class="uk-position-cover">
         <div class="headertext uk-container uk-heading-large" >
         <div class="uk-grid"><div class="uk-width-1-2">
           <?php // Get random one of selected quotes
