@@ -97,7 +97,7 @@
         <div class="headertext uk-container " >
           <?php // Get random one of selected quotes        
           if( $headquote ) {  echo '<h2 class="quote-head uk-text-center">' . $headquote . '</h2 class="quote-head">'; }     ?>
-          <h2 class="quote-att uk-text-center">Rabbi Lord Jonathan Sacks</h2>
+          <h3 class="quote-att uk-text-center">Rabbi Lord Jonathan Sacks</h3>
   </div>
       </div>
     </div>
@@ -114,14 +114,14 @@
       ?>
   <div class="home-image uk-cover-background fullwidth uk-hidden-small" data-uk-sticky="{top:121}" style="background-image:url(<?php echo $banner_url[0] ?>)"> 
       <img class="uk-invisible" src="<?php echo $banner_url[0] ?>" width="" height="" alt="">
-      <div class="uk-position-cover uk-flex uk-flex-middle">
-        <div class="headertext uk-container uk-heading-large" >
+      <div class="uk-position-cover uk-vertical-align">
+        <div class="headertext uk-container uk-heading-large uk-vertical-align-middle" >
         <div class="uk-grid"><div class="uk-width-1-2">
           <?php // Get random one of selected quotes
           $headquotes = get_post_meta( get_the_ID(), 'selected_quotes', true );     
-          if( $headquote ) {  echo $headquote; }      
+          if( $headquote ) {  echo '<span>' . $headquote . '</span>'; }      
           ?>
-          <h2 class="quote-att">Rabbi Lord Jonathan Sacks</h2>
+          <h3 class="quote-att">Rabbi Lord Jonathan Sacks</h3>
           </div></div>
         </div>
       </div>

@@ -16,9 +16,18 @@ Header image code is in header.php due to sticky
 	<div class="page-sector perspectives uk-block">
 
 		<h4 class="page-sector-title header-line">Perspectives</h4>
-		  <?php // Covenant & Conversation
-			$args = array( 'posts_per_page' => 3,  'category' => 852 ); // Covenant & Conversation cat id= 852
-			$persposts = get_posts( $args );
+		  <?php // 
+		  $args = array(
+		 'posts_per_page' => 3,
+		'tax_query' => array(
+			array(
+				'taxonomy' => 'media',
+				'field' => 'slug',
+				'terms' => 'text'
+			)
+		)
+	);
+				$persposts = get_posts( $args );
 	 ?>		 
 			 	
 		<div class="uk-grid uk-grid-collapse">
@@ -78,16 +87,8 @@ Header image code is in header.php due to sticky
 
   <?php // Commentary
 
-	$args = array(
-		 'posts_per_page' => 3,
-		'tax_query' => array(
-			array(
-				'taxonomy' => 'media',
-				'field' => 'slug',
-				'terms' => 'text'
-			)
-		)
-	);
+	$args = array( 'posts_per_page' => 3,  'category' => 852 ); // Covenant & Conversation cat id= 852
+	
 	$postslist = get_posts( $args );
 
 		 foreach ( $postslist as $post ) : setup_postdata( $post ); ?>		

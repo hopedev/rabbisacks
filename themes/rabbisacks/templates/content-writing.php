@@ -38,8 +38,6 @@
 
 			<div class="uk-width-medium-1-3 feature-right feature-secondary">
 
-				<div class="uk-grid uk-grid-collapse">
-		            <div class="uk-width-1-1">
 			            <div class="uk-panel uk-panel-box uk-panel-space">
 
 					<?php 
@@ -53,9 +51,8 @@
 					 // endforeach; 
 				 ?>
 					 </div>
-				 </div>
-		            <div class="uk-width-1-1">
-		            	 <div class="uk-panel uk-panel-box">
+			
+		            	<div class="uk-panel uk-panel-box">
 
 					<?php 
 						 $post = $textposts[2];
@@ -67,7 +64,7 @@
 					<?php
 					 // endforeach; 
 				 ?>
-					 </div>
+				
 					</div>
 		        </div>
 				

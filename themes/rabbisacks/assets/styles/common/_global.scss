@@ -3,16 +3,22 @@ body, p, td,.header-line, .pagetop_menu h4{
   font-family: "niveau-grotesk",sans-serif;
 }
 .uk-article-title a {color:$brand-primary}
-h1, blockquote, blockquote p, .quote-large, .entry-title, .quote-head {
+h1, blockquote, blockquote p, .quote-large, .entry-title, .quote-head, .headertext span {
   font-family: $didot;
 }
+
 // font-family:'Didot W01 Display';
 // font-family:'Didot W01';
 
 // font sizes
 // .header-text {font-size: 50px;}
 h3.entry-title {
-    a{color: $text-dark;}
+    a{
+      color: black;
+      &:hover{
+        text-decoration: underline;
+        } 
+    }
 }
 
 .wrap .content{
@@ -57,7 +63,10 @@ ul {
 }
 
 
-
+.readmore{
+  font-size: small;
+font-weight: 600;
+}
 
 time{ color: $dark-body-color;}
 .entry-summary {
