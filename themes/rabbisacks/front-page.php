@@ -275,7 +275,7 @@ Header image code is in header.php due to sticky
 
 	</div>
 
-	<div class="page-sector header-line">Social fixed width </div>
+	<div class="page-sector header-line"> Social Media Hub </div>
 <?php 
 echo do_shortcode('[ff id="1"]'); 
 
