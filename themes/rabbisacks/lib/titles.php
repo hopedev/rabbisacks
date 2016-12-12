@@ -21,21 +21,7 @@ function title() {
   } elseif (is_404()) {
     return __('Not Found', 'sage');
   } elseif (is_page()) {
-
-
-      if(is_page(get_landing_pages('cc'))){ // cc home
-        return "Latest Commentary";
-      }elseif(is_page(get_landing_pages('audio'))){ // audio home
-        return "Latest Audio";
-      }elseif(is_page(get_landing_pages('video'))){ // cc home
-        return "Latest Videos";
-      }elseif(is_page(get_landing_pages('text'))){ // cc home
-        return "Latest Writing";
-      }elseif(is_page(get_landing_pages('books'))){ // cc home
-        return "Latest Books";
-      }else{
     return get_the_title();
-  }
   } else{
     return get_the_title();
   }
