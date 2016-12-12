@@ -14,27 +14,32 @@
      <div class="featured-image">
      <?php the_post_thumbnail('full'); ?>
      </div>
+     <?php  if( get_field('pdf_upload') || get_field('hebrew_pdf') || get_field('portuguese_pdf') ||  get_field('spanish') ): ?>
      <div class="downloads uk-clearfix"> 
-      <div class="uk-float-left uk-panel uk-panel-box"><i class="uk-icon-download" ></i></div>
-     <div class="uk-grid uk-grid-width-medium-1-4">
-           
-            <?php if( get_field('pdf_upload') ): ?>
-               <div class="uk-panel uk-panel-box"><a href="<?php the_field('pdf_upload');?>" class="pdf_button">Download as PDF</a></div> 
-            <?php endif; ?>
+      
+          <div class="uk-float-left uk-panel uk-panel-box"><i class="uk-icon-download" ></i></div>
+    
+           <div class="uk-grid uk-grid-width-medium-1-4">
+                 
+                  <?php if( get_field('pdf_upload') ): ?>
+                     <div class="uk-panel uk-panel-box"><a href="<?php the_field('pdf_upload');?>" class="pdf_button">Download as PDF</a></div> 
+                  <?php endif; ?>
 
-            <?php if( get_field('hebrew_pdf') ): ?>
-               <div class="uk-panel uk-panel-box"><a href="<?php the_field('hebrew_pdf');?>" class="pdf_button">Download in Hebrew</a></div> 
-            <?php endif; ?>
+                  <?php if( get_field('hebrew_pdf') ): ?>
+                     <div class="uk-panel uk-panel-box"><a href="<?php the_field('hebrew_pdf');?>" class="pdf_button">Download in Hebrew</a></div> 
+                  <?php endif; ?>
 
-            <?php if( get_field('portuguese_pdf') ): ?>
-               <div class="uk-panel uk-panel-box"><a href="<?php the_field('portuguese_pdf');?>" class="pdf_button">Download in Portuguese</a></div> 
-            <?php endif; ?>
+                  <?php if( get_field('portuguese_pdf') ): ?>
+                     <div class="uk-panel uk-panel-box"><a href="<?php the_field('portuguese_pdf');?>" class="pdf_button">Download in Portuguese</a></div> 
+                  <?php endif; ?>
 
-            <?php if( get_field('spanish') ): ?>
-               <div class="uk-panel uk-panel-box"><a href="<?php the_field('spanish');?>" class="pdf_button">Download in Spanish</a></div> 
-            <?php endif; ?>
-      </div>
-</div>
+                  <?php if( get_field('spanish') ): ?>
+                     <div class="uk-panel uk-panel-box"><a href="<?php the_field('spanish');?>" class="pdf_button">Download in Spanish</a></div> 
+                  <?php endif; ?>
+            </div>
+
+    </div>
+ <?php endif; ?>
       <?php the_content(); ?>
       <div class="tags">Tagged with:
       <?php echo get_the_tag_list(); ?> 

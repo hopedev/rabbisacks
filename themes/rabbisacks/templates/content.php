@@ -3,7 +3,7 @@
 <article <?php post_class('uk-article'); ?>>
   <header>
 
-  <?php // get type of post, C&C, text, audio, video (or book?) 
+  <?php // get type of post, C&C, text, audio, video (or book?) These need to be icons
   	if(in_category('covenant-conversation')) {
   		$type = "c-c";
   	} else if (has_term( 'text', 'media' ) ){

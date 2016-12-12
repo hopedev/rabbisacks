@@ -177,7 +177,7 @@ Header image code is in header.php due to sticky
 						 	<div class="uk-align-center"><?php the_post_thumbnail('book-home', array( 'class' => 'uk-align-center' )); ?></div>
 								<h3 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 								<div class=""><?php the_excerpt(); ?></div>
-								<div class="uk-align-center uk-text-center buy"><a href="<?php the_field ('purchase_link'); ?>" class="order uk-button uk-button-primary" target="_blank">Buy now</a></div>
+								<div class="uk-align-center uk-text-center buy"><a href="<?php the_field ('purchase_link'); ?>" class="order uk-button uk-button-primary" target="_blank">Buy Now</a></div>
 					 	</div>
 			        </li>
 				      
@@ -238,7 +238,7 @@ Header image code is in header.php due to sticky
 
 	</div>
 
-	<div class="page-sector quotes uk-block"><h4 class="page-sector-title header-line">Quotes</h4>
+	<div class="page-sector quotes uk-block"><h4 class="page-sector-title header-line">Quote of the day</h4>
 <?php 
 		if ( false === ( $quotes = get_transient( 'rand_quote' ) ) ) {
 		  // It wasn't there, so regenerate the data and save the transient
@@ -265,7 +265,7 @@ Header image code is in header.php due to sticky
 		}	
 		  foreach ( $quotes as $post ) : setup_postdata( $post ); 
 		  			$quote = get_post_meta( get_the_ID(), 'quote_text', true );
-		  			$quote = str_replace('"', "", $quote);
+		  			$quote = str_replace(array('"','“', '”'), "", $quote);
 		  			$source = get_post_meta( get_the_ID(), 'quote_place_and_date', true );
 		  ?>	
 

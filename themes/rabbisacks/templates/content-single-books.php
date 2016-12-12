@@ -32,19 +32,22 @@
           <a href="<?php the_field ('purchase_link'); ?>" class="order uk-button uk-button-primary" target="_blank">Buy now</a>
 
         </div>
+       <div class="entry-content">
+
+        
+
+     
+
+          <?php the_content(); ?>
+         
+        </div>
+
+
 
       </div>
 
     </div>   <!-- End Grid --> 
-    <div class="entry-content">
-
-    
-
  
-
-      <?php the_content(); ?>
-     
-    </div>
 
     <footer>
       <div class="uk-grid uk-grid-width-medium-1-3">

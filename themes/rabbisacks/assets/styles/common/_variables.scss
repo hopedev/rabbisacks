@@ -28,6 +28,7 @@
 $spacer: 1rem; // setting a referenced bootstrap variable
 $icon-font-path:                                 "../fonts" !default;
 $border-line-width: 1px;
+$border-line-color: #ccc;
 
 $didot:'Didot W01 Display';
 // font-family:'Didot W01 Display';
@@ -69,6 +70,7 @@ $base-h1-font-size: 15px;
 $base-h1-line-height: 1.5;
 
 $offcanvas-bar-width: auto;
+$offcanvas-bar-background:$brand-primary;
 $nav-offcanvas-hover-background: none;
 $nav-offcanvas-active-background:none;
 

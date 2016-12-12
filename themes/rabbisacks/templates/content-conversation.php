@@ -32,10 +32,8 @@
 				 </div>
 			</div>
 
-			<div class="uk-width-medium-1-3 uk-pull-2-3">
+			<div class="uk-width-medium-1-3 uk-pull-2-3  feature-secondary feature-left">
 
-				<div class="uk-grid feature-secondary feature-left">
-		            <div class="uk-width-1-1">
 			            <div class="uk-panel uk-panel-box uk-panel-space">
 
 					<?php 
@@ -49,8 +47,7 @@
 					 // endforeach; 
 				 ?>
 					 </div>
-				 </div>
-		            <div class="uk-width-1-1">
+				
 		            	 <div class="uk-panel uk-panel-box uk-panel-space">
 
 					<?php 
@@ -63,8 +60,7 @@
 					<?php
 					 // endforeach; 
 				 ?>
-					 </div>
-					</div>
+			
 		        </div>
 				
 			</div>

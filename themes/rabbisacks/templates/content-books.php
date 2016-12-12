@@ -1,4 +1,4 @@
-<div id="thecontent" class="books-home">
+<div id="thecontent" class="books-home page-sector">
 
  <?php // Covenant & Conversation
 
@@ -20,7 +20,7 @@
 					 <div class="uk-panel-body">
 					<h3 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 					<?php the_excerpt(); ?>
-					<div class="uk-button uk-button-primary order">Order Now</div>
+					<div class="uk-button uk-button-primary order">Buy Now</div>
 					</div>
 					
 				<?php
@@ -45,7 +45,7 @@
 						  <div class="uk-panel-body"> 
 						<h3 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 						<div class=""><?php the_excerpt(); ?></div>
-						<div class="uk-align-center uk-text-center buy"><a href="<?php the_field ('purchase_link'); ?>" class="order uk-button uk-button-primary" target="_blank">Buy now</a></div>
+						<div class="uk-align-center uk-text-center buy"><a href="<?php the_field ('purchase_link'); ?>" class="order uk-button uk-button-primary" target="_blank">Buy Now</a></div>
 			 	</div>
 
 					 </div>
@@ -91,7 +91,7 @@
 								<div class=""><?php the_excerpt(); ?></div>
 								
 					 	</div>
-					 	<div class="uk-align-center uk-text-center buy"><a href="<?php the_field ('purchase_link'); ?>" class="order uk-button uk-button-primary" target="_blank">Buy now</a></div>
+					 	<div class="uk-align-center uk-text-center buy"><a href="<?php the_field ('purchase_link'); ?>" class="order uk-button uk-button-primary" target="_blank">Buy Now</a></div>
 			        </li>
 				      
 				      <?php endforeach; ?>

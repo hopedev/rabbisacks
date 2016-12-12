@@ -84,14 +84,14 @@ span.category_icon {
 
 blockquote, .quote-large{ // Quotemarks top & bottom
   &::before{
-       color: $brand-grey;
+       color: $border-line-color;
       content: open-quote;
        font-size: 4em;
       display: block;
       padding-top: 0.3em;
     }
     &::after{
-         color: $brand-grey;
+         color: $border-line-color;
       content: close-quote;
         display: block;
           font-size: 4em;

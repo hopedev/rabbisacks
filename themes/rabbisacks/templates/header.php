@@ -19,7 +19,9 @@
 
    <!-- Offscreen menu --> 
         <div class="uk-offcanvas" id="sidemenu">
+        
           <nav class="uk-offcanvas-bar uk-offcanvas-bar-flip">
+          <a href="" class="" data-uk-toggle="{target:'#sidemenu', cls:'uk-active'}">close</a>
             <?php
             if (has_nav_menu('primary_navigation')) :
               wp_nav_menu(['theme_location' => 'primary_navigation', 'items_wrap' => '<ul class="uk-nav uk-nav-offcanvas uk-nav-parent-icon" data-uk-nav>%3$s</ul>','walker' => new Walker_UIKIT_offCanvas() ]);

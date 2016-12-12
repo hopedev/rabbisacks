@@ -79,7 +79,7 @@
     font-style: normal;
     letter-spacing: 3px;
     &:before, &:after {
-          background: linear-gradient(to bottom, $dark-grey, $dark-grey) no-repeat center / 100% 1px;
+          background: linear-gradient(to bottom, $border-line-color, $border-line-color) no-repeat center / 100% 1px;
           content: '';
           display: table-cell;
           width: 50%;

@@ -1,4 +1,4 @@
-<div id="thecontent">
+<div id="thecontent" >
 
  <?php // Video category
 
